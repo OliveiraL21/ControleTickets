@@ -26,16 +26,16 @@ namespace ControleTickets
             dgvTickets.DataSource = tickets;
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void inserirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             TicketCadastroForm ticketCadastro = new TicketCadastroForm();
 
             ticketCadastro.ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

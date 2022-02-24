@@ -22,7 +22,7 @@ namespace ControleTickets
         }
         private TimeSpan TotalDeHorasGastas(TimeSpan horaInicio, TimeSpan horaFim)
         {
-            var horaGasta = horaFim.Add( -horaInicio);
+            var horaGasta = horaFim.Add(-horaInicio);
             return horaGasta;
         }
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ControleTickets
         private void button1_Click(object sender, EventArgs e)
         {
             var horaGasta = TotalDeHorasGastas(dt_HoraInicio.Value.TimeOfDay, dt_HoraFinal.Value.TimeOfDay);
-            txt_HorasGastas.Text = horaGasta.ToString("hh:mm:ss");
+            txt_HorasGastas.Text = horaGasta.ToString(@"hh\:mm");
             var result = ticketService.InserirTicket(new Ticket 
             {
                 Codigo = txt_Codigo.Text.ToUpper(),
@@ -47,6 +47,12 @@ namespace ControleTickets
             {
                 MessageBox.Show("Registro de ticket inserido com sucesso !", "Inserção realizada com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
+            consultarTickets.ShowDialog();
         }
     }
 }

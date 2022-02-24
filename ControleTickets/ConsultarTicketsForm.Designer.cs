@@ -1,7 +1,7 @@
 ﻿
 namespace ControleTickets
 {
-    partial class TicketForm
+    partial class ConsultarTicketsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,19 @@ namespace ControleTickets
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarTicketsForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Descricao = new System.Windows.Forms.Label();
+            this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.lb_Titulo = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -48,8 +53,8 @@ namespace ControleTickets
             this.inserirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(894, 45);
-            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Size = new System.Drawing.Size(993, 45);
+            this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // inserirToolStripMenuItem
@@ -80,7 +85,6 @@ namespace ControleTickets
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
-            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -90,32 +94,58 @@ namespace ControleTickets
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // lbl_Descricao
+            // dgvTickets
             // 
-            this.lbl_Descricao.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Descricao.Location = new System.Drawing.Point(175, 178);
-            this.lbl_Descricao.Name = "lbl_Descricao";
-            this.lbl_Descricao.Size = new System.Drawing.Size(545, 194);
-            this.lbl_Descricao.TabIndex = 1;
-            this.lbl_Descricao.Text = "Sistemas para cadastrar os tickets trabalhados durante os atendimento da fila de " +
-    "suporte N3 da Luxfacta para a Raizen";
+            this.dgvTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTickets.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTickets.Location = new System.Drawing.Point(14, 164);
+            this.dgvTickets.Name = "dgvTickets";
+            this.dgvTickets.ReadOnly = true;
+            this.dgvTickets.RowHeadersWidth = 51;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTickets.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTickets.RowTemplate.Height = 29;
+            this.dgvTickets.Size = new System.Drawing.Size(938, 317);
+            this.dgvTickets.TabIndex = 8;
             // 
-            // TicketForm
+            // lb_Titulo
+            // 
+            this.lb_Titulo.AutoSize = true;
+            this.lb_Titulo.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lb_Titulo.Location = new System.Drawing.Point(355, 85);
+            this.lb_Titulo.Name = "lb_Titulo";
+            this.lb_Titulo.Size = new System.Drawing.Size(241, 38);
+            this.lb_Titulo.TabIndex = 10;
+            this.lb_Titulo.Text = "Consultar Tickets";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvTickets);
+            this.panel1.Location = new System.Drawing.Point(12, 126);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(969, 511);
+            this.panel1.TabIndex = 11;
+            // 
+            // ConsultarTicketsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(894, 550);
-            this.Controls.Add(this.lbl_Descricao);
+            this.ClientSize = new System.Drawing.Size(993, 641);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lb_Titulo);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "TicketForm";
+            this.Name = "ConsultarTicketsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TicketForm";
+            this.Text = "ConsultarTicketsForm";
+            this.Load += new System.EventHandler(this.ConsultarTicketsForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,6 +156,8 @@ namespace ControleTickets
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.Label lbl_Descricao;
+        private System.Windows.Forms.DataGridView dgvTickets;
+        private System.Windows.Forms.Label lb_Titulo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

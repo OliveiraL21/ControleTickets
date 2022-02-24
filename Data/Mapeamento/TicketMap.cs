@@ -13,7 +13,8 @@ namespace Data.Mapeamento
     {
         public void Configure(EntityTypeBuilder<Ticket> builder)
         {
-            builder.HasKey(t => t.Codigo);
+            builder.HasKey(t => t.TicketID);
+            builder.Property(t => t.Codigo).IsRequired();
             builder.Property(t => t.HorarioDeInicio).IsRequired();
             builder.Property(t => t.HoririoFinal).IsRequired();
             builder.Property(t => t.Date).IsRequired();

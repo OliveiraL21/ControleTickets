@@ -8,6 +8,7 @@ namespace Model
 {
     public class Ticket
     {
+        public int TicketID { get; set; }
         public string Codigo { get; set; }
         public TimeSpan? HorarioDeInicio { get; set; }
         public TimeSpan? HoririoFinal { get; set; }

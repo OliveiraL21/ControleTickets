@@ -27,5 +27,11 @@ namespace ControleTickets
         {
             Application.Exit();
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
+            consultarTickets.ShowDialog();
+        }
     }
 }

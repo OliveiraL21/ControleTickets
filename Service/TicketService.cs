@@ -25,5 +25,15 @@ namespace Service
             var result = ticketDAL.GetTickets();
             return result;
         }
+        public bool EditTicket(Ticket ticket)
+        {
+            var result = ticketDAL.EditTicket(ticket);
+            return result;
+        }
+        public bool DeleteTicket(Ticket ticket)
+        {
+            var result = ticketDAL.DeleteTicket(ticket);
+            return result;
+        }
     }
 }

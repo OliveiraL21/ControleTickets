@@ -30,5 +30,30 @@ namespace Data
             var result = _context.tickets.ToList();
             return result;
         }
+        public bool EditTicket(Ticket ticket)
+        {
+            var result = _context.tickets.SingleOrDefault(t => t.Codigo == ticket.Codigo);
+            if(result != null)
+            {
+                _context.Entry(result).CurrentValues.SetValues(ticket);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+        public bool DeleteTicket(Ticket ticket)
+        {
+            var result = _context.tickets.SingleOrDefault(t => t.Codigo == ticket.Codigo && t.TicketID == ticket.TicketID);
+            if(result != null)
+            {
+                _context.Remove(result);
+                _context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

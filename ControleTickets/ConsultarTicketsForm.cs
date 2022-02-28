@@ -31,7 +31,7 @@ namespace ControleTickets
                 dgvTickets.Rows[contador].Cells[2].Value = ticket.HorarioDeInicio;
                 dgvTickets.Rows[contador].Cells[3].Value = ticket.HoririoFinal;
                 dgvTickets.Rows[contador].Cells[4].Value = ticket.TotalHorasGasto;
-                dgvTickets.Rows[contador].Cells[5].Value = ticket.Date;
+                dgvTickets.Rows[contador].Cells[5].Value = ticket.Date.Date.ToShortDateString();
                 dgvTickets.Rows[contador].Cells[6].Value = ticket.Descricao;
                 contador++;
             }
@@ -91,6 +91,20 @@ namespace ControleTickets
             
         }
 
-        
+        private void btn_Detalhes_Click(object sender, EventArgs e)
+        {
+            Ticket ticket = new Ticket()
+            {
+                TicketID = Convert.ToInt32(dgvTickets.SelectedRows[0].Cells[0].Value),
+                Codigo = dgvTickets.SelectedRows[0].Cells[1].Value.ToString(),
+                HorarioDeInicio = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[2].Value).TimeOfDay,
+                HoririoFinal = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[3].Value).TimeOfDay,
+                TotalHorasGasto = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[4].Value).TimeOfDay,
+                Date = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[5].Value).Date,
+                Descricao = dgvTickets.SelectedRows[0].Cells[6].Value.ToString()
+            };
+            DetalhesTicketForm detalhesTicket = new DetalhesTicketForm(ticket);
+            detalhesTicket.ShowDialog();
+        }
     }
 }

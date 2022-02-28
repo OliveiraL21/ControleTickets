@@ -36,6 +36,7 @@ namespace ControleTickets
             this.lbl_Data = new System.Windows.Forms.Label();
             this.lbl_HorasGastas = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_descricao = new System.Windows.Forms.Label();
             this.txt_Decricao = new System.Windows.Forms.TextBox();
             this.txt_HorasGastas = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,8 +49,8 @@ namespace ControleTickets
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Titulo = new System.Windows.Forms.Label();
             this.minimizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +107,7 @@ namespace ControleTickets
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_descricao);
             this.panel1.Controls.Add(this.txt_Decricao);
             this.panel1.Controls.Add(this.txt_HorasGastas);
             this.panel1.Controls.Add(this.button1);
@@ -120,13 +122,23 @@ namespace ControleTickets
             this.panel1.Controls.Add(this.lbl_HorarioFim);
             this.panel1.Location = new System.Drawing.Point(31, 121);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(929, 568);
+            this.panel1.Size = new System.Drawing.Size(913, 555);
             this.panel1.TabIndex = 5;
+            // 
+            // lbl_descricao
+            // 
+            this.lbl_descricao.AutoSize = true;
+            this.lbl_descricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_descricao.Location = new System.Drawing.Point(34, 144);
+            this.lbl_descricao.Name = "lbl_descricao";
+            this.lbl_descricao.Size = new System.Drawing.Size(103, 23);
+            this.lbl_descricao.TabIndex = 12;
+            this.lbl_descricao.Text = "Descricação";
             // 
             // txt_Decricao
             // 
             this.txt_Decricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Decricao.Location = new System.Drawing.Point(161, 212);
+            this.txt_Decricao.Location = new System.Drawing.Point(143, 144);
             this.txt_Decricao.Multiline = true;
             this.txt_Decricao.Name = "txt_Decricao";
             this.txt_Decricao.Size = new System.Drawing.Size(668, 283);
@@ -145,7 +157,7 @@ namespace ControleTickets
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(161, 135);
+            this.button1.Location = new System.Drawing.Point(613, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 45);
             this.button1.TabIndex = 9;
@@ -240,16 +252,6 @@ namespace ControleTickets
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 
-            // lbl_Titulo
-            // 
-            this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Titulo.Location = new System.Drawing.Point(285, 65);
-            this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(430, 45);
-            this.lbl_Titulo.TabIndex = 7;
-            this.lbl_Titulo.Text = "Cadastro de Atividades N3";
-            // 
             // minimizarToolStripMenuItem
             // 
             this.minimizarToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -261,6 +263,16 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem.Text = "Minimizar";
             this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Titulo.Location = new System.Drawing.Point(285, 65);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(430, 45);
+            this.lbl_Titulo.TabIndex = 7;
+            this.lbl_Titulo.Text = "Cadastro de Atividades N3";
+            // 
             // TicketCadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -271,6 +283,7 @@ namespace ControleTickets
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TicketCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketCadastroForm";
@@ -305,5 +318,6 @@ namespace ControleTickets
         private System.Windows.Forms.TextBox txt_Decricao;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizarToolStripMenuItem;
+        private System.Windows.Forms.Label lbl_descricao;
     }
 }

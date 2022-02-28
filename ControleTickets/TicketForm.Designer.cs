@@ -35,8 +35,8 @@ namespace ControleTickets
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_Descricao = new System.Windows.Forms.Label();
             this.minimizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_Descricao = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,16 +95,6 @@ namespace ControleTickets
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 
-            // lbl_Descricao
-            // 
-            this.lbl_Descricao.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Descricao.Location = new System.Drawing.Point(175, 178);
-            this.lbl_Descricao.Name = "lbl_Descricao";
-            this.lbl_Descricao.Size = new System.Drawing.Size(545, 194);
-            this.lbl_Descricao.TabIndex = 1;
-            this.lbl_Descricao.Text = "Sistemas para cadastrar os tickets trabalhados durante os atendimento da fila de " +
-    "suporte N3 da Luxfacta para a Raizen";
-            // 
             // minimizarToolStripMenuItem
             // 
             this.minimizarToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -116,6 +106,16 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem.Text = "Minimizar";
             this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
+            // lbl_Descricao
+            // 
+            this.lbl_Descricao.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Descricao.Location = new System.Drawing.Point(175, 178);
+            this.lbl_Descricao.Name = "lbl_Descricao";
+            this.lbl_Descricao.Size = new System.Drawing.Size(545, 194);
+            this.lbl_Descricao.TabIndex = 1;
+            this.lbl_Descricao.Text = "Sistemas para cadastrar os tickets trabalhados durante os atendimento da fila de " +
+    "suporte N3 da Luxfacta para a Raizen";
+            // 
             // TicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -125,6 +125,7 @@ namespace ControleTickets
             this.Controls.Add(this.lbl_Descricao);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "TicketForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

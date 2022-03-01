@@ -25,6 +25,11 @@ namespace Data
             _context.SaveChanges();
             return true;
         }
+        public IEnumerable<Ticket> Get(Ticket ticket)
+        {
+            var result =  _context.tickets.Where(t => t.Codigo.Equals(ticket.Codigo)).ToList();
+            return result;
+        }
         public IEnumerable<Ticket> GetTickets()
         {
             var result = _context.tickets.ToList();
@@ -32,7 +37,7 @@ namespace Data
         }
         public bool EditTicket(Ticket ticket)
         {
-            var result = _context.tickets.SingleOrDefault(t => t.Codigo == ticket.Codigo);
+            var result = _context.tickets.SingleOrDefault(t => t.TicketID == ticket.TicketID);
             if(result != null)
             {
                 _context.Entry(result).CurrentValues.SetValues(ticket);

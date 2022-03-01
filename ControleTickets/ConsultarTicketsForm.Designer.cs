@@ -49,6 +49,7 @@ namespace ControleTickets
             this.lb_Titulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Atualizar = new System.Windows.Forms.Button();
             this.btn_Detalhes = new System.Windows.Forms.Button();
             this.lbl_Acoes = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -244,12 +245,23 @@ namespace ControleTickets
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btn_Atualizar);
             this.panel2.Controls.Add(this.btn_Detalhes);
             this.panel2.Controls.Add(this.lbl_Acoes);
             this.panel2.Location = new System.Drawing.Point(996, 162);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(84, 382);
             this.panel2.TabIndex = 17;
+            // 
+            // btn_Atualizar
+            // 
+            this.btn_Atualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Atualizar.Image")));
+            this.btn_Atualizar.Location = new System.Drawing.Point(19, 131);
+            this.btn_Atualizar.Name = "btn_Atualizar";
+            this.btn_Atualizar.Size = new System.Drawing.Size(44, 50);
+            this.btn_Atualizar.TabIndex = 20;
+            this.btn_Atualizar.UseVisualStyleBackColor = true;
+            this.btn_Atualizar.Click += new System.EventHandler(this.btn_Atualizar_Click);
             // 
             // btn_Detalhes
             // 
@@ -335,6 +347,7 @@ namespace ControleTickets
             this.btn_Consultar.TabIndex = 11;
             this.btn_Consultar.Text = "Consultar";
             this.btn_Consultar.UseVisualStyleBackColor = false;
+            this.btn_Consultar.Click += new System.EventHandler(this.btn_Consultar_Click);
             // 
             // dtp_DataFinal
             // 
@@ -411,5 +424,6 @@ namespace ControleTickets
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_Acoes;
         private System.Windows.Forms.Button btn_Detalhes;
+        private System.Windows.Forms.Button btn_Atualizar;
     }
 }

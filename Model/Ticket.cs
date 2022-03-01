@@ -10,11 +10,11 @@ namespace Model
     {
         public int TicketID { get; set; }
         public string Codigo { get; set; }
-        public TimeSpan? HorarioDeInicio { get; set; }
-        public TimeSpan? HoririoFinal { get; set; }
+        public DateTime? HorarioDeInicio { get; set; }
+        public DateTime? HoririoFinal { get; set; }
         public DateTime Date { get; set; }
         public string Descricao { get; set; }
-        public TimeSpan? TotalHorasGasto { get; set; }
+        public DateTime? TotalHorasGasto { get; set; }
 
     }
 }

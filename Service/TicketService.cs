@@ -20,6 +20,11 @@ namespace Service
             var result = ticketDAL.InserirTicket(ticket);
             return result;
         }
+        public IEnumerable<Ticket> Get(Ticket ticket)
+        {
+            var result = ticketDAL.Get(ticket);
+            return result;
+        }
         public IEnumerable<Ticket> GetTickets()
         {
             var result = ticketDAL.GetTickets();

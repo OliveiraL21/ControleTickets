@@ -26,14 +26,36 @@ namespace ControleTickets
             ticketService = new TicketService();
             _ticket = ticket;
         }
+        #region Front-end
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void minimizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void inserirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TicketCadastroForm cadastroTicket = new TicketCadastroForm();
+            cadastroTicket.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
+            consultarTickets.ShowDialog();
+        }
+#endregion
+       
         private void DetalhesTicketForm_Load(object sender, EventArgs e)
         {
             txt_Codigo.Text = _ticket.Codigo;
-            dt_HoraInicio.Value = Convert.ToDateTime(_ticket.HorarioDeInicio);
-            dt_HoraFinal.Value = Convert.ToDateTime(_ticket.HoririoFinal);
+            dt_HoraInicio.Value = Convert.ToDateTime(_ticket.HorarioDeInicio.Value.ToShortTimeString());
+            dt_HoraFinal.Value = Convert.ToDateTime(_ticket.HoririoFinal.Value.ToShortTimeString());
             dt_Data.Value = _ticket.Date;
-            txt_HorasGastas.Text = _ticket.TotalHorasGasto.ToString();
+            txt_HorasGastas.Text = _ticket.TotalHorasGasto.Value.ToString("HH:mm");
             txt_Decricao.Text = _ticket.Descricao;
         }
 
@@ -41,10 +63,11 @@ namespace ControleTickets
         {
             var result = ticketService.EditTicket(new Ticket()
             {
+                TicketID = _ticket.TicketID,
                 Codigo = txt_Codigo.Text,
-                HorarioDeInicio = dt_HoraInicio.Value.TimeOfDay,
-                HoririoFinal = dt_HoraFinal.Value.TimeOfDay,
-                TotalHorasGasto = Convert.ToDateTime(txt_HorasGastas.Text).TimeOfDay,
+                HorarioDeInicio = Convert.ToDateTime(dt_HoraInicio.Value.ToShortTimeString()),
+                HoririoFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
+                TotalHorasGasto = Convert.ToDateTime(txt_HorasGastas.Text),
                 Date = dt_Data.Value,
                 Descricao = txt_Decricao.Text
 
@@ -54,5 +77,7 @@ namespace ControleTickets
                 MessageBox.Show("Ticket editado com sucesso !", "Edição concluida", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+      
     }
 }

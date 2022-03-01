@@ -84,15 +84,17 @@ namespace ControleTickets
             // 
             this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.inserirToolStripMenuItem1.Text = "Inserir";
+            this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -103,6 +105,7 @@ namespace ControleTickets
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(69, 41);
             this.toolStripMenuItem1.Text = "Sair";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // minimizarToolStripMenuItem
             // 
@@ -113,6 +116,7 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem.Name = "minimizarToolStripMenuItem";
             this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(113, 41);
             this.minimizarToolStripMenuItem.Text = "Minimizar";
+            this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
             // txt_HorasGastas
             // 
@@ -132,6 +136,7 @@ namespace ControleTickets
             // 
             // dt_HoraInicio
             // 
+            this.dt_HoraInicio.CustomFormat = "HH:mm";
             this.dt_HoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dt_HoraInicio.Location = new System.Drawing.Point(137, 123);
             this.dt_HoraInicio.Name = "dt_HoraInicio";
@@ -243,7 +248,7 @@ namespace ControleTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(853, 591);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.lbl_descricao);

@@ -287,6 +287,7 @@ namespace ControleTickets
             this.Name = "TicketCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketCadastroForm";
+            this.Load += new System.EventHandler(this.TicketCadastroForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

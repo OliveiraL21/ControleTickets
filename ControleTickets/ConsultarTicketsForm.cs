@@ -20,17 +20,25 @@ namespace ControleTickets
             InitializeComponent();
             ticketService = new TicketService();
         }
+        private void AtualizarGridView()
+        {
+            var result = ticketService.GetTickets();
+            dgvTickets.Rows.Clear();
+            DatagridViewFill(result);
+
+        }
         private void DatagridViewFill(IEnumerable<Ticket> tickets)
         {
+            dgvTickets.Rows.Clear();
             int contador = 0;
             foreach(var ticket in tickets)
             {
                 dgvTickets.Rows.Add();
                 dgvTickets.Rows[contador].Cells[0].Value = ticket.TicketID;
                 dgvTickets.Rows[contador].Cells[1].Value = ticket.Codigo;
-                dgvTickets.Rows[contador].Cells[2].Value = ticket.HorarioDeInicio;
-                dgvTickets.Rows[contador].Cells[3].Value = ticket.HoririoFinal;
-                dgvTickets.Rows[contador].Cells[4].Value = ticket.TotalHorasGasto;
+                dgvTickets.Rows[contador].Cells[2].Value = ticket.HorarioDeInicio.Value.ToShortTimeString();
+                dgvTickets.Rows[contador].Cells[3].Value = ticket.HoririoFinal.Value.ToShortTimeString();
+                dgvTickets.Rows[contador].Cells[4].Value = ticket.TotalHorasGasto.Value.ToShortTimeString();
                 dgvTickets.Rows[contador].Cells[5].Value = ticket.Date.Date.ToShortDateString();
                 dgvTickets.Rows[contador].Cells[6].Value = ticket.Descricao;
                 contador++;
@@ -86,25 +94,58 @@ namespace ControleTickets
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Erro ao tentar excluir o ticket !", "ERRO AO EXCLUIR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao tentar excluir o ticket {ex.Message}!", "ERRO AO EXCLUIR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }
 
         private void btn_Detalhes_Click(object sender, EventArgs e)
         {
-            Ticket ticket = new Ticket()
+            try
             {
-                TicketID = Convert.ToInt32(dgvTickets.SelectedRows[0].Cells[0].Value),
-                Codigo = dgvTickets.SelectedRows[0].Cells[1].Value.ToString(),
-                HorarioDeInicio = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[2].Value).TimeOfDay,
-                HoririoFinal = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[3].Value).TimeOfDay,
-                TotalHorasGasto = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[4].Value).TimeOfDay,
-                Date = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[5].Value).Date,
-                Descricao = dgvTickets.SelectedRows[0].Cells[6].Value.ToString()
-            };
-            DetalhesTicketForm detalhesTicket = new DetalhesTicketForm(ticket);
-            detalhesTicket.ShowDialog();
+                Ticket ticket = new Ticket()
+                {
+                    TicketID = Convert.ToInt32(dgvTickets.SelectedRows[0].Cells[0].Value),
+                    Codigo = dgvTickets.SelectedRows[0].Cells[1].Value.ToString(),
+                    HorarioDeInicio = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[2].Value),
+                    HoririoFinal = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[3].Value),
+                    TotalHorasGasto = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[4].Value),
+                    Date = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[5].Value).Date,
+                    Descricao = dgvTickets.SelectedRows[0].Cells[6].Value.ToString()
+                };
+                DetalhesTicketForm detalhesTicket = new DetalhesTicketForm(ticket);
+                detalhesTicket.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao exibir detalhes do ticket {ex.Message}","Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+        private void btn_Atualizar_Click(object sender, EventArgs e)
+        {
+            AtualizarGridView();
+        }
+
+        private void btn_Consultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Ticket ticket = new Ticket() 
+                {
+                    Codigo = txt_Codigo.Text
+                };
+                if (!string.IsNullOrEmpty(txt_Codigo.Text))
+                {
+                    var result = ticketService.Get(ticket);
+                    DatagridViewFill(result);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao buscar tickets {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

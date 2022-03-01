@@ -132,13 +132,24 @@ namespace ControleTickets
         {
             try
             {
-                Ticket ticket = new Ticket() 
-                {
-                    Codigo = txt_Codigo.Text
-                };
+                
                 if (!string.IsNullOrEmpty(txt_Codigo.Text))
                 {
+                    Ticket ticket = new Ticket()
+                    {
+                        Codigo = txt_Codigo.Text
+                    };
                     var result = ticketService.Get(ticket);
+                    DatagridViewFill(result);
+                }
+                else
+                {
+                    var dataInicial = dtp_DataInicial.Value;
+                    Ticket ticket = new Ticket()
+                    {
+                        Date = dataInicial
+                    };
+                    var result = ticketService.GetByDate(ticket);
                     DatagridViewFill(result);
                 }
             }

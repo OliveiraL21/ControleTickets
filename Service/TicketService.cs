@@ -25,6 +25,11 @@ namespace Service
             var result = ticketDAL.Get(ticket);
             return result;
         }
+        public IEnumerable<Ticket>GetByDate(Ticket ticket)
+        {
+            var result = ticketDAL.GetByDate(ticket);
+            return result;
+        }
         public IEnumerable<Ticket> GetTickets()
         {
             var result = ticketDAL.GetTickets();

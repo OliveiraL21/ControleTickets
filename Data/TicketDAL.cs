@@ -30,6 +30,11 @@ namespace Data
             var result =  _context.tickets.Where(t => t.Codigo.Equals(ticket.Codigo)).ToList();
             return result;
         }
+        public IEnumerable<Ticket>GetByDate(Ticket ticket)
+        {
+            var result = _context.tickets.Where(t => t.Date == ticket.Date).ToList();
+            return result;
+        }
         public IEnumerable<Ticket> GetTickets()
         {
             var result = _context.tickets.ToList();

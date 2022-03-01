@@ -55,10 +55,8 @@ namespace ControleTickets
             this.btn_Delete = new System.Windows.Forms.Button();
             this.lbl_Codigo = new System.Windows.Forms.Label();
             this.txt_Codigo = new System.Windows.Forms.TextBox();
-            this.lbl_DataFim = new System.Windows.Forms.Label();
             this.lbl_DataInicio = new System.Windows.Forms.Label();
             this.btn_Consultar = new System.Windows.Forms.Button();
-            this.dtp_DataFinal = new System.Windows.Forms.DateTimePicker();
             this.dtp_DataInicial = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
@@ -231,10 +229,8 @@ namespace ControleTickets
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.lbl_Codigo);
             this.panel1.Controls.Add(this.txt_Codigo);
-            this.panel1.Controls.Add(this.lbl_DataFim);
             this.panel1.Controls.Add(this.lbl_DataInicio);
             this.panel1.Controls.Add(this.btn_Consultar);
-            this.panel1.Controls.Add(this.dtp_DataFinal);
             this.panel1.Controls.Add(this.dtp_DataInicial);
             this.panel1.Controls.Add(this.dgvTickets);
             this.panel1.Location = new System.Drawing.Point(0, 126);
@@ -290,7 +286,7 @@ namespace ControleTickets
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(555, 91);
+            this.btn_Delete.Location = new System.Drawing.Point(555, 48);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(118, 37);
             this.btn_Delete.TabIndex = 16;
@@ -315,16 +311,6 @@ namespace ControleTickets
             this.txt_Codigo.Size = new System.Drawing.Size(137, 27);
             this.txt_Codigo.TabIndex = 14;
             // 
-            // lbl_DataFim
-            // 
-            this.lbl_DataFim.AutoSize = true;
-            this.lbl_DataFim.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_DataFim.Location = new System.Drawing.Point(41, 105);
-            this.lbl_DataFim.Name = "lbl_DataFim";
-            this.lbl_DataFim.Size = new System.Drawing.Size(91, 23);
-            this.lbl_DataFim.TabIndex = 13;
-            this.lbl_DataFim.Text = "Data Final";
-            // 
             // lbl_DataInicio
             // 
             this.lbl_DataInicio.AutoSize = true;
@@ -341,23 +327,13 @@ namespace ControleTickets
             this.btn_Consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Consultar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Consultar.ForeColor = System.Drawing.Color.White;
-            this.btn_Consultar.Location = new System.Drawing.Point(417, 92);
+            this.btn_Consultar.Location = new System.Drawing.Point(411, 48);
             this.btn_Consultar.Name = "btn_Consultar";
             this.btn_Consultar.Size = new System.Drawing.Size(118, 37);
             this.btn_Consultar.TabIndex = 11;
             this.btn_Consultar.Text = "Consultar";
             this.btn_Consultar.UseVisualStyleBackColor = false;
             this.btn_Consultar.Click += new System.EventHandler(this.btn_Consultar_Click);
-            // 
-            // dtp_DataFinal
-            // 
-            this.dtp_DataFinal.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtp_DataFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_DataFinal.Location = new System.Drawing.Point(138, 102);
-            this.dtp_DataFinal.Name = "dtp_DataFinal";
-            this.dtp_DataFinal.Size = new System.Drawing.Size(250, 27);
-            this.dtp_DataFinal.TabIndex = 10;
-            this.dtp_DataFinal.Value = new System.DateTime(2022, 2, 24, 12, 58, 4, 0);
             // 
             // dtp_DataInicial
             // 
@@ -404,10 +380,8 @@ namespace ControleTickets
         private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.Label lb_Titulo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbl_DataFim;
         private System.Windows.Forms.Label lbl_DataInicio;
         private System.Windows.Forms.Button btn_Consultar;
-        private System.Windows.Forms.DateTimePicker dtp_DataFinal;
         private System.Windows.Forms.DateTimePicker dtp_DataInicial;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label lbl_Codigo;

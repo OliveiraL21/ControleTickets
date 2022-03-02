@@ -343,7 +343,7 @@ namespace ControleTickets
             this.dtp_DataInicial.Name = "dtp_DataInicial";
             this.dtp_DataInicial.Size = new System.Drawing.Size(250, 27);
             this.dtp_DataInicial.TabIndex = 9;
-            this.dtp_DataInicial.Value = new System.DateTime(2022, 2, 24, 13, 3, 13, 0);
+            this.dtp_DataInicial.Value = new System.DateTime(2022, 3, 1, 0, 0, 0, 0);
             // 
             // ConsultarTicketsForm
             // 

@@ -46,7 +46,9 @@ namespace ControleTickets
         }
         private void ConsultarTicketsForm_Load(object sender, EventArgs e)
         {
-            var tickets = ticketService.GetTickets();
+            dtp_DataInicial.Value = DateTime.Now;
+            Ticket ticket = new Ticket() { Date = Convert.ToDateTime(DateTime.Now.Date.ToShortDateString()) };
+            var tickets = ticketService.GetByDate(ticket);
             DatagridViewFill(tickets);
         }
         #region Front-end

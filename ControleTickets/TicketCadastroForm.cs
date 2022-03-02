@@ -39,11 +39,11 @@ namespace ControleTickets
                 var result = ticketService.InserirTicket(new Ticket
                 {
                     Codigo = txt_Codigo.Text.ToUpper(),
-                    HorarioDeInicio = Convert.ToDateTime(dt_HoraInicio.Value.TimeOfDay),
-                    HoririoFinal = Convert.ToDateTime(dt_HoraFinal.Value.TimeOfDay),
-                    Date = dt_Data.Value,
+                    HorarioDeInicio = Convert.ToDateTime(dt_HoraInicio.Value.ToShortTimeString()),
+                    HoririoFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
+                    Date = dt_Data.Value.Date,
                     Descricao = txt_Decricao.Text,
-                    TotalHorasGasto = Convert.ToDateTime(horaGasta)
+                    TotalHorasGasto = Convert.ToDateTime(horaGasta.ToString(@"hh\:mm"))
                 });
                 if (result)
                 {
@@ -57,8 +57,8 @@ namespace ControleTickets
             finally
             {
                 txt_Codigo.Text = "";
-                dt_HoraInicio.Value = Convert.ToDateTime(DateTime.Now.TimeOfDay);
-                dt_HoraFinal.Value = Convert.ToDateTime(DateTime.Now.TimeOfDay);
+                dt_HoraInicio.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
+                dt_HoraFinal.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
                 dt_Data.Value = DateTime.Now;
                 txt_Decricao.Text = "";
 
@@ -85,8 +85,8 @@ namespace ControleTickets
         private void TicketCadastroForm_Load(object sender, EventArgs e)
         {
             dt_Data.Value = DateTime.Now;
-            dt_HoraInicio.Value = Convert.ToDateTime(DateTime.Now.TimeOfDay);
-            dt_HoraFinal.Value = Convert.ToDateTime(DateTime.Now.TimeOfDay);
+            dt_HoraInicio.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
+            dt_HoraFinal.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
         }
     }
 }

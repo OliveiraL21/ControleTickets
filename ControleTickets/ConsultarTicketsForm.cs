@@ -160,5 +160,69 @@ namespace ControleTickets
                 MessageBox.Show($"Erro ao buscar tickets {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_CalcularTotalHoras_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTickets.Rows == null || dgvTickets.Rows.Count == 0)
+                {
+                    MessageBox.Show("Preencha a tabela com dados de tickets para o calculo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                int contador = 0;
+                List<Ticket> lstTickets = new List<Ticket>();
+                var ticketId = txt_Codigo.Text;
+                DateTime total = new DateTime();
+                foreach(var item in dgvTickets.Rows)
+                {
+                    lstTickets.Add(new Ticket()
+                    {
+                        TicketID = Convert.ToInt32(dgvTickets.Rows[contador].Cells[0].Value),
+                        Codigo = dgvTickets.Rows[contador].Cells[1].Value.ToString(),
+                        HorarioDeInicio = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[2].Value),
+                        HoririoFinal = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[3].Value),
+                        TotalHorasGasto = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[4].Value),
+                        Date = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[5].Value),
+                        Descricao = dgvTickets.Rows[contador].Cells[6].Value.ToString(),
+                    });
+                    contador++;
+                }
+
+                foreach (var ticket in lstTickets)
+                {
+                    if(ticket.Codigo == ticketId)
+                    {
+                        total = total + ticket.TotalHorasGasto.Value.TimeOfDay;
+                    }
+                }
+                if (dgvTickets.Columns.Contains("Total"))
+                {
+                    for (int i = 0; i < dgvTickets.Rows.Count; i++)
+                    {
+                        if (dgvTickets.Rows[i].Cells[1].Value.ToString() == ticketId)
+                        {
+                            dgvTickets.Rows[i].Cells[7].Value = total.ToShortTimeString();
+                        }
+                    }
+                }
+                else
+                {
+                    dgvTickets.Columns.Add("Total", "Total Horas");
+                    for (int i = 0; i < dgvTickets.Rows.Count; i++)
+                    {
+                        if (dgvTickets.Rows[i].Cells[1].Value.ToString() == ticketId)
+                        {
+                            dgvTickets.Rows[i].Cells[7].Value = total.ToShortTimeString();
+                        }
+                    }
+                }
+              
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao tentar consultar dados dos tickets {ex.Message}.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
     }
 }

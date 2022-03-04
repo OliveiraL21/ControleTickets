@@ -32,7 +32,7 @@ namespace Data
         }
         public IEnumerable<Ticket>GetByDate(Ticket ticket)
         {
-            var result = _context.tickets.Where(t => t.Date == ticket.Date).ToList();
+            var result = _context.tickets.Where(t => t.Date == ticket.Date.Date).ToList();
             return result;
         }
         public IEnumerable<Ticket> GetTickets()

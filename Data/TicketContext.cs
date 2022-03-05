@@ -12,6 +12,7 @@ namespace Data
     public class TicketContext : DbContext
     {
         public DbSet<Ticket> tickets { get; set; }
+        public DbSet<Result> results { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -20,6 +21,7 @@ namespace Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ticket>(new TicketMap().Configure);
+            modelBuilder.Entity<Result>(new ResultMap().Configure);
         }
     }
 }

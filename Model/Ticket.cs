@@ -15,6 +15,9 @@ namespace Model
         public DateTime Date { get; set; }
         public string Descricao { get; set; }
         public DateTime? TotalHorasGasto { get; set; }
+        public Result? Result { get; set; } = new Result() { ResultId = 0 };
+        
+          
 
     }
 }

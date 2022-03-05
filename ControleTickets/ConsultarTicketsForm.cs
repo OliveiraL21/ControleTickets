@@ -15,10 +15,13 @@ namespace ControleTickets
     public partial class ConsultarTicketsForm : Form
     {
         private readonly TicketService ticketService;
+        private readonly ResultService resultService;
+        private DateTime totalDiario;
         public ConsultarTicketsForm()
         {
             InitializeComponent();
             ticketService = new TicketService();
+            resultService = new ResultService();
         }
         private void AtualizarGridView()
         {
@@ -27,11 +30,16 @@ namespace ControleTickets
             DatagridViewFill(result);
 
         }
+        private DateTime CalcularTotalHorasDiarias(DateTime total)
+        { 
+            totalDiario = totalDiario + total.TimeOfDay;
+            return totalDiario;
+        }
         private void DatagridViewFill(IEnumerable<Ticket> tickets)
         {
             dgvTickets.Rows.Clear();
             int contador = 0;
-            foreach(var ticket in tickets)
+            foreach (var ticket in tickets)
             {
                 dgvTickets.Rows.Add();
                 dgvTickets.Rows[contador].Cells[0].Value = ticket.TicketID;
@@ -46,6 +54,7 @@ namespace ControleTickets
         }
         private void ConsultarTicketsForm_Load(object sender, EventArgs e)
         {
+
             dtp_DataInicial.Value = DateTime.Now;
             Ticket ticket = new Ticket() { Date = Convert.ToDateTime(DateTime.Now.Date.ToShortDateString()) };
             var tickets = ticketService.GetByDate(ticket);
@@ -68,7 +77,7 @@ namespace ControleTickets
             ticketCadastro.ShowDialog();
             this.Close();
         }
-#endregion
+        #endregion
 
         private void dgvTickets_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -89,16 +98,16 @@ namespace ControleTickets
                     Codigo = txt_Codigo.Text,
                     TicketID = Convert.ToInt32(dgvTickets.SelectedRows[0].Cells[0].Value)
                 });
-                if(result)
+                if (result)
                 {
                     MessageBox.Show("Ticket deletado com sucesso!", "Ticket Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao tentar excluir o ticket {ex.Message}!", "ERRO AO EXCLUIR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void btn_Detalhes_Click(object sender, EventArgs e)
@@ -118,11 +127,10 @@ namespace ControleTickets
                 DetalhesTicketForm detalhesTicket = new DetalhesTicketForm(ticket);
                 detalhesTicket.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao exibir detalhes do ticket {ex.Message}","Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao exibir detalhes do ticket {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
         }
 
         private void btn_Atualizar_Click(object sender, EventArgs e)
@@ -134,7 +142,7 @@ namespace ControleTickets
         {
             try
             {
-                
+                totalDiario = Convert.ToDateTime(DateTime.Now.Date.Date.ToShortTimeString());
                 if (!string.IsNullOrEmpty(txt_Codigo.Text))
                 {
                     Ticket ticket = new Ticket()
@@ -155,7 +163,7 @@ namespace ControleTickets
                     DatagridViewFill(result);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar tickets {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -169,11 +177,15 @@ namespace ControleTickets
                 {
                     MessageBox.Show("Preencha a tabela com dados de tickets para o calculo.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 int contador = 0;
                 List<Ticket> lstTickets = new List<Ticket>();
                 var ticketId = txt_Codigo.Text;
                 DateTime total = new DateTime();
-                foreach(var item in dgvTickets.Rows)
+                DateTime retorno = new DateTime();
+                Result result = new Result();
+
+                foreach (var item in dgvTickets.Rows)
                 {
                     lstTickets.Add(new Ticket()
                     {
@@ -187,15 +199,17 @@ namespace ControleTickets
                     });
                     contador++;
                 }
-
+                
                 foreach (var ticket in lstTickets)
                 {
-                    if(ticket.Codigo == ticketId)
+                    if (ticket.Codigo == ticketId)
                     {
                         total = total + ticket.TotalHorasGasto.Value.TimeOfDay;
                     }
+                    
                 }
-                if (dgvTickets.Columns.Contains("Total"))
+                retorno = CalcularTotalHorasDiarias(total);
+                if (dgvTickets.Columns.Contains("Total") && dgvTickets.Columns.Contains("Total_HorasDiario"))
                 {
                     for (int i = 0; i < dgvTickets.Rows.Count; i++)
                     {
@@ -208,6 +222,7 @@ namespace ControleTickets
                 else
                 {
                     dgvTickets.Columns.Add("Total", "Total Horas");
+                    dgvTickets.Columns.Add("Total_HorasDiario", "Horas Diaria");
                     for (int i = 0; i < dgvTickets.Rows.Count; i++)
                     {
                         if (dgvTickets.Rows[i].Cells[1].Value.ToString() == ticketId)
@@ -215,14 +230,24 @@ namespace ControleTickets
                             dgvTickets.Rows[i].Cells[7].Value = total.ToShortTimeString();
                         }
                     }
+                    
+
                 }
-              
+
+                dgvTickets.Rows[0].Cells[8].Value = retorno.ToShortTimeString();
+               
+
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao tentar consultar dados dos tickets {ex.Message}.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao tentar calcular dados dos tickets {ex.Message}.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+            finally
+            {
+                txt_Codigo.Text = "";
+            }
         }
     }
 }

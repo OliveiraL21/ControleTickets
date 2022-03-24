@@ -60,6 +60,7 @@ namespace ControleTickets
                 dt_HoraInicio.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
                 dt_HoraFinal.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
                 dt_Data.Value = DateTime.Now;
+                txt_HorasGastas.Text = "";
                 txt_Decricao.Text = "";
 
             }
@@ -69,7 +70,7 @@ namespace ControleTickets
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
-            consultarTickets.ShowDialog();
+            consultarTickets.Show();
         }
 
         private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)

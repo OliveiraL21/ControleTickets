@@ -20,7 +20,8 @@ namespace ControleTickets
         private void inserirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             TicketCadastroForm cadastroTicket = new TicketCadastroForm();
-            cadastroTicket.ShowDialog();
+            cadastroTicket.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,7 +32,8 @@ namespace ControleTickets
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
-            consultarTickets.ShowDialog();
+            consultarTickets.Show();
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)

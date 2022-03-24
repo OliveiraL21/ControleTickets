@@ -125,7 +125,7 @@ namespace ControleTickets
                     Descricao = dgvTickets.SelectedRows[0].Cells[6].Value.ToString()
                 };
                 DetalhesTicketForm detalhesTicket = new DetalhesTicketForm(ticket);
-                detalhesTicket.ShowDialog();
+                detalhesTicket.Show();
             }
             catch (Exception ex)
             {
@@ -235,8 +235,6 @@ namespace ControleTickets
                 }
 
                 dgvTickets.Rows[0].Cells[8].Value = retorno.ToShortTimeString();
-               
-
 
 
             }

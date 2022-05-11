@@ -26,6 +26,7 @@ namespace ControleTickets
         private void AtualizarGridView()
         {
             var result = ticketService.GetTickets();
+            result = result.Where(x => x.Date == DateTime.Now);
             dgvTickets.Rows.Clear();
             DatagridViewFill(result);
 

@@ -40,7 +40,7 @@ namespace ControleTickets
                 {
                     Codigo = txt_Codigo.Text.ToUpper(),
                     HorarioDeInicio = Convert.ToDateTime(dt_HoraInicio.Value.ToShortTimeString()),
-                    HoririoFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
+                    HorarioFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
                     Date = dt_Data.Value.Date,
                     Descricao = txt_Decricao.Text,
                     TotalHorasGasto = Convert.ToDateTime(horaGasta.ToString(@"hh\:mm"))

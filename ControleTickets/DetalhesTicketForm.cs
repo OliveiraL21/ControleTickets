@@ -53,7 +53,7 @@ namespace ControleTickets
         {
             txt_Codigo.Text = _ticket.Codigo;
             dt_HoraInicio.Value = Convert.ToDateTime(_ticket.HorarioDeInicio.Value.ToShortTimeString());
-            dt_HoraFinal.Value = Convert.ToDateTime(_ticket.HoririoFinal.Value.ToShortTimeString());
+            dt_HoraFinal.Value = Convert.ToDateTime(_ticket.HorarioFinal.Value.ToShortTimeString());
             dt_Data.Value = _ticket.Date;
             txt_HorasGastas.Text = _ticket.TotalHorasGasto.Value.ToString("HH:mm");
             txt_Decricao.Text = _ticket.Descricao;
@@ -66,7 +66,7 @@ namespace ControleTickets
                 TicketID = _ticket.TicketID,
                 Codigo = txt_Codigo.Text,
                 HorarioDeInicio = Convert.ToDateTime(dt_HoraInicio.Value.ToShortTimeString()),
-                HoririoFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
+                HorarioFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
                 TotalHorasGasto = Convert.ToDateTime(txt_HorasGastas.Text),
                 Date = dt_Data.Value,
                 Descricao = txt_Decricao.Text

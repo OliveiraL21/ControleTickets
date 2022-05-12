@@ -11,11 +11,11 @@ namespace Model
         public int TicketID { get; set; }
         public string Codigo { get; set; }
         public DateTime? HorarioDeInicio { get; set; }
-        public DateTime? HoririoFinal { get; set; }
+        public DateTime? HorarioFinal { get; set; }
         public DateTime Date { get; set; }
         public string Descricao { get; set; }
         public DateTime? TotalHorasGasto { get; set; }
-        public Result? Result { get; set; } = new Result() { ResultId = 0 };
+
         
           
 

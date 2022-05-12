@@ -15,20 +15,29 @@ namespace ControleTickets
     public partial class ConsultarTicketsForm : Form
     {
         private readonly TicketService ticketService;
-        private readonly ResultService resultService;
+        
         private DateTime totalDiario;
         public ConsultarTicketsForm()
         {
             InitializeComponent();
             ticketService = new TicketService();
-            resultService = new ResultService();
+            
         }
         private void AtualizarGridView()
         {
-            var result = ticketService.GetTickets();
-            result = result.Where(x => x.Date == DateTime.Now);
-            dgvTickets.Rows.Clear();
-            DatagridViewFill(result);
+            try
+            {
+                var data = dtp_DataInicial.Value.Date;
+                var result = ticketService.GetTickets();
+                result = result.Where(x => x.Date == data).ToList();
+                dgvTickets.Rows.Clear();
+                DatagridViewFill(result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Digite uma data {ex.Message}", "Erro ao atualizar os registros", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
 
         }
         private DateTime CalcularTotalHorasDiarias(DateTime total)
@@ -46,7 +55,7 @@ namespace ControleTickets
                 dgvTickets.Rows[contador].Cells[0].Value = ticket.TicketID;
                 dgvTickets.Rows[contador].Cells[1].Value = ticket.Codigo;
                 dgvTickets.Rows[contador].Cells[2].Value = ticket.HorarioDeInicio.Value.ToShortTimeString();
-                dgvTickets.Rows[contador].Cells[3].Value = ticket.HoririoFinal.Value.ToShortTimeString();
+                dgvTickets.Rows[contador].Cells[3].Value = ticket.HorarioFinal.Value.ToShortTimeString();
                 dgvTickets.Rows[contador].Cells[4].Value = ticket.TotalHorasGasto.Value.ToShortTimeString();
                 dgvTickets.Rows[contador].Cells[5].Value = ticket.Date.Date.ToShortDateString();
                 dgvTickets.Rows[contador].Cells[6].Value = ticket.Descricao;
@@ -120,7 +129,7 @@ namespace ControleTickets
                     TicketID = Convert.ToInt32(dgvTickets.SelectedRows[0].Cells[0].Value),
                     Codigo = dgvTickets.SelectedRows[0].Cells[1].Value.ToString(),
                     HorarioDeInicio = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[2].Value),
-                    HoririoFinal = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[3].Value),
+                    HorarioFinal = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[3].Value),
                     TotalHorasGasto = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[4].Value),
                     Date = Convert.ToDateTime(dgvTickets.SelectedRows[0].Cells[5].Value).Date,
                     Descricao = dgvTickets.SelectedRows[0].Cells[6].Value.ToString()
@@ -184,7 +193,7 @@ namespace ControleTickets
                 var ticketId = txt_Codigo.Text;
                 DateTime total = new DateTime();
                 DateTime retorno = new DateTime();
-                Result result = new Result();
+            
 
                 foreach (var item in dgvTickets.Rows)
                 {
@@ -193,7 +202,7 @@ namespace ControleTickets
                         TicketID = Convert.ToInt32(dgvTickets.Rows[contador].Cells[0].Value),
                         Codigo = dgvTickets.Rows[contador].Cells[1].Value.ToString(),
                         HorarioDeInicio = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[2].Value),
-                        HoririoFinal = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[3].Value),
+                        HorarioFinal = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[3].Value),
                         TotalHorasGasto = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[4].Value),
                         Date = Convert.ToDateTime(dgvTickets.Rows[contador].Cells[5].Value),
                         Descricao = dgvTickets.Rows[contador].Cells[6].Value.ToString(),

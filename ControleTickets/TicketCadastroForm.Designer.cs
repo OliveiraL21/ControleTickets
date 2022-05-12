@@ -59,9 +59,9 @@ namespace ControleTickets
             // 
             this.lbl_Codigo.AutoSize = true;
             this.lbl_Codigo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Codigo.Location = new System.Drawing.Point(79, 13);
+            this.lbl_Codigo.Location = new System.Drawing.Point(69, 10);
             this.lbl_Codigo.Name = "lbl_Codigo";
-            this.lbl_Codigo.Size = new System.Drawing.Size(68, 23);
+            this.lbl_Codigo.Size = new System.Drawing.Size(58, 19);
             this.lbl_Codigo.TabIndex = 0;
             this.lbl_Codigo.Text = "Código";
             // 
@@ -69,9 +69,9 @@ namespace ControleTickets
             // 
             this.lbl_HoraInicio.AutoSize = true;
             this.lbl_HoraInicio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HoraInicio.Location = new System.Drawing.Point(24, 50);
+            this.lbl_HoraInicio.Location = new System.Drawing.Point(21, 38);
             this.lbl_HoraInicio.Name = "lbl_HoraInicio";
-            this.lbl_HoraInicio.Size = new System.Drawing.Size(123, 23);
+            this.lbl_HoraInicio.Size = new System.Drawing.Size(105, 19);
             this.lbl_HoraInicio.TabIndex = 1;
             this.lbl_HoraInicio.Text = "Horário Inicial";
             // 
@@ -79,9 +79,9 @@ namespace ControleTickets
             // 
             this.lbl_HorarioFim.AutoSize = true;
             this.lbl_HorarioFim.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorarioFim.Location = new System.Drawing.Point(313, 46);
+            this.lbl_HorarioFim.Location = new System.Drawing.Point(274, 34);
             this.lbl_HorarioFim.Name = "lbl_HorarioFim";
-            this.lbl_HorarioFim.Size = new System.Drawing.Size(114, 23);
+            this.lbl_HorarioFim.Size = new System.Drawing.Size(97, 19);
             this.lbl_HorarioFim.TabIndex = 2;
             this.lbl_HorarioFim.Text = "Horário Final";
             // 
@@ -89,9 +89,9 @@ namespace ControleTickets
             // 
             this.lbl_Data.AutoSize = true;
             this.lbl_Data.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Data.Location = new System.Drawing.Point(99, 88);
+            this.lbl_Data.Location = new System.Drawing.Point(87, 66);
             this.lbl_Data.Name = "lbl_Data";
-            this.lbl_Data.Size = new System.Drawing.Size(48, 23);
+            this.lbl_Data.Size = new System.Drawing.Size(40, 19);
             this.lbl_Data.TabIndex = 3;
             this.lbl_Data.Text = "Data";
             // 
@@ -99,9 +99,9 @@ namespace ControleTickets
             // 
             this.lbl_HorasGastas.AutoSize = true;
             this.lbl_HorasGastas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorasGastas.Location = new System.Drawing.Point(316, 91);
+            this.lbl_HorasGastas.Location = new System.Drawing.Point(276, 68);
             this.lbl_HorasGastas.Name = "lbl_HorasGastas";
-            this.lbl_HorasGastas.Size = new System.Drawing.Size(110, 20);
+            this.lbl_HorasGastas.Size = new System.Drawing.Size(86, 15);
             this.lbl_HorasGastas.TabIndex = 4;
             this.lbl_HorasGastas.Text = "Total de Horas";
             // 
@@ -120,35 +120,38 @@ namespace ControleTickets
             this.panel1.Controls.Add(this.lbl_Codigo);
             this.panel1.Controls.Add(this.lbl_Data);
             this.panel1.Controls.Add(this.lbl_HorarioFim);
-            this.panel1.Location = new System.Drawing.Point(31, 121);
+            this.panel1.Location = new System.Drawing.Point(27, 91);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 555);
+            this.panel1.Size = new System.Drawing.Size(799, 416);
             this.panel1.TabIndex = 5;
             // 
             // lbl_descricao
             // 
             this.lbl_descricao.AutoSize = true;
             this.lbl_descricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_descricao.Location = new System.Drawing.Point(34, 144);
+            this.lbl_descricao.Location = new System.Drawing.Point(30, 108);
             this.lbl_descricao.Name = "lbl_descricao";
-            this.lbl_descricao.Size = new System.Drawing.Size(103, 23);
+            this.lbl_descricao.Size = new System.Drawing.Size(89, 19);
             this.lbl_descricao.TabIndex = 12;
             this.lbl_descricao.Text = "Descricação";
             // 
             // txt_Decricao
             // 
             this.txt_Decricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Decricao.Location = new System.Drawing.Point(143, 144);
+            this.txt_Decricao.Location = new System.Drawing.Point(125, 108);
+            this.txt_Decricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Decricao.Multiline = true;
             this.txt_Decricao.Name = "txt_Decricao";
-            this.txt_Decricao.Size = new System.Drawing.Size(668, 283);
+            this.txt_Decricao.Size = new System.Drawing.Size(585, 213);
             this.txt_Decricao.TabIndex = 11;
             // 
             // txt_HorasGastas
             // 
-            this.txt_HorasGastas.Location = new System.Drawing.Point(441, 84);
+            this.txt_HorasGastas.Location = new System.Drawing.Point(386, 63);
+            this.txt_HorasGastas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_HorasGastas.Name = "txt_HorasGastas";
-            this.txt_HorasGastas.Size = new System.Drawing.Size(146, 27);
+            this.txt_HorasGastas.Size = new System.Drawing.Size(128, 23);
             this.txt_HorasGastas.TabIndex = 10;
             // 
             // button1
@@ -157,9 +160,11 @@ namespace ControleTickets
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(613, 74);
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(536, 56);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 45);
+            this.button1.Size = new System.Drawing.Size(121, 33);
             this.button1.TabIndex = 9;
             this.button1.Text = "Inserir";
             this.button1.UseVisualStyleBackColor = false;
@@ -169,33 +174,37 @@ namespace ControleTickets
             // 
             this.dt_HoraFinal.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dt_HoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dt_HoraFinal.Location = new System.Drawing.Point(441, 44);
+            this.dt_HoraFinal.Location = new System.Drawing.Point(386, 33);
+            this.dt_HoraFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_HoraFinal.Name = "dt_HoraFinal";
-            this.dt_HoraFinal.Size = new System.Drawing.Size(146, 27);
+            this.dt_HoraFinal.Size = new System.Drawing.Size(128, 23);
             this.dt_HoraFinal.TabIndex = 8;
             // 
             // dt_HoraInicio
             // 
             this.dt_HoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dt_HoraInicio.Location = new System.Drawing.Point(161, 46);
+            this.dt_HoraInicio.Location = new System.Drawing.Point(141, 34);
+            this.dt_HoraInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_HoraInicio.Name = "dt_HoraInicio";
-            this.dt_HoraInicio.Size = new System.Drawing.Size(138, 27);
+            this.dt_HoraInicio.Size = new System.Drawing.Size(121, 23);
             this.dt_HoraInicio.TabIndex = 7;
             // 
             // dt_Data
             // 
             this.dt_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_Data.Location = new System.Drawing.Point(161, 88);
+            this.dt_Data.Location = new System.Drawing.Point(141, 66);
+            this.dt_Data.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_Data.Name = "dt_Data";
-            this.dt_Data.Size = new System.Drawing.Size(138, 27);
+            this.dt_Data.Size = new System.Drawing.Size(121, 23);
             this.dt_Data.TabIndex = 6;
             this.dt_Data.Value = new System.DateTime(2022, 2, 23, 21, 56, 50, 0);
             // 
             // txt_Codigo
             // 
-            this.txt_Codigo.Location = new System.Drawing.Point(161, 9);
+            this.txt_Codigo.Location = new System.Drawing.Point(141, 7);
+            this.txt_Codigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Codigo.Name = "txt_Codigo";
-            this.txt_Codigo.Size = new System.Drawing.Size(138, 27);
+            this.txt_Codigo.Size = new System.Drawing.Size(121, 23);
             this.txt_Codigo.TabIndex = 5;
             // 
             // menuStrip1
@@ -209,7 +218,8 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1011, 45);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(885, 34);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -223,21 +233,21 @@ namespace ControleTickets
             this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.inserirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem.Image")));
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
-            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(88, 41);
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(77, 30);
             this.inserirToolStripMenuItem.Text = "Ticket";
             // 
             // inserirToolStripMenuItem1
             // 
             this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -248,7 +258,7 @@ namespace ControleTickets
             this.sairToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.sairToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sairToolStripMenuItem.Image")));
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(69, 41);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(60, 30);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 
@@ -259,7 +269,7 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.minimizarToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.minimizar;
             this.minimizarToolStripMenuItem.Name = "minimizarToolStripMenuItem";
-            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(113, 41);
+            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(94, 30);
             this.minimizarToolStripMenuItem.Text = "Minimizar";
             this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
@@ -267,23 +277,24 @@ namespace ControleTickets
             // 
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Titulo.Location = new System.Drawing.Point(285, 65);
+            this.lbl_Titulo.Location = new System.Drawing.Point(249, 49);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(430, 45);
+            this.lbl_Titulo.Size = new System.Drawing.Size(358, 37);
             this.lbl_Titulo.TabIndex = 7;
             this.lbl_Titulo.Text = "Cadastro de Atividades N3";
             // 
             // TicketCadastroForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1011, 688);
+            this.ClientSize = new System.Drawing.Size(885, 516);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TicketCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketCadastroForm";

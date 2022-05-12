@@ -16,7 +16,7 @@ namespace Data.Mapeamento
             builder.HasKey(t => t.TicketID);
             builder.Property(t => t.Codigo).IsRequired();
             builder.Property(t => t.HorarioDeInicio).IsRequired();
-            builder.Property(t => t.HoririoFinal).IsRequired();
+            builder.Property(t => t.HorarioFinal).IsRequired();
             builder.Property(t => t.Date).IsRequired();
             builder.Property(t => t.TotalHorasGasto);
 

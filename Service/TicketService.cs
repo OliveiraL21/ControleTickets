@@ -1,5 +1,6 @@
 ﻿using Data;
 using Model;
+using Model.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public class TicketService
+    public class TicketService : ITicketService
     {
         private TicketDAL ticketDAL;
         public TicketService()
@@ -44,6 +45,21 @@ namespace Service
         {
             var result = ticketDAL.DeleteTicket(ticket);
             return result;
+        }
+
+        public void ExportarTickets(List<Ticket> tickets)
+        {
+            int linha = 1, coluna = 1;
+           
+            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+            app.Visible = true;
+            Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
+            Microsoft.Office.Interop.Excel.Worksheets ws = wb.Worksheets[1] as Microsoft.Office.Interop.Excel.Worksheets;
+            
+            foreach(var ticket in tickets)
+            {
+               
+            }
         }
     }
 }

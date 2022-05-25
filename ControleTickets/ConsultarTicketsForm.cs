@@ -257,5 +257,25 @@ namespace ControleTickets
                 txt_Codigo.Text = "";
             }
         }
+
+        private void btn_export_excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Ticket>tickets = new List<Ticket>();
+                if (dgvTickets.Rows != null && dgvTickets.Rows.Count > 0)
+                {
+                    foreach (var ticket in dgvTickets.Rows)
+                    {
+                        tickets.Add(ticket as Ticket);
+                    }
+                    ticketService.ExportarTickets(tickets);
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

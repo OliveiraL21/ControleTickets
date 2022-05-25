@@ -1,4 +1,5 @@
 ﻿using Model;
+using Model.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class TicketDAL
+    public class TicketDAL : IRepository
     {
         private readonly TicketContext _context;
         public TicketDAL()

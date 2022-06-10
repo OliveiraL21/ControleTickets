@@ -30,8 +30,8 @@ namespace ControleTickets
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarTicketsForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,7 @@ namespace ControleTickets
             this.lb_Titulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_export_excel = new System.Windows.Forms.Button();
             this.btn_CalcularTotalHoras = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Atualizar = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@ namespace ControleTickets
             this.lbl_DataInicio = new System.Windows.Forms.Label();
             this.btn_Consultar = new System.Windows.Forms.Button();
             this.dtp_DataInicial = new System.Windows.Forms.DateTimePicker();
-            this.btn_export_excel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,7 +99,7 @@ namespace ControleTickets
             // 
             this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
             // 
@@ -107,7 +107,7 @@ namespace ControleTickets
             // 
             this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // toolStripMenuItem1
@@ -138,14 +138,14 @@ namespace ControleTickets
             this.dgvTickets.AllowUserToDeleteRows = false;
             this.dgvTickets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTickets.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TicketId,
@@ -160,8 +160,8 @@ namespace ControleTickets
             this.dgvTickets.Name = "dgvTickets";
             this.dgvTickets.ReadOnly = true;
             this.dgvTickets.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTickets.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTickets.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTickets.RowTemplate.Height = 29;
             this.dgvTickets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTickets.Size = new System.Drawing.Size(836, 286);
@@ -256,6 +256,24 @@ namespace ControleTickets
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(74, 286);
             this.panel2.TabIndex = 17;
+            // 
+            // btn_export_excel
+            // 
+            this.btn_export_excel.AutoEllipsis = true;
+            this.btn_export_excel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_export_excel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_export_excel.Enabled = false;
+            this.btn_export_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_export_excel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_export_excel.ForeColor = System.Drawing.Color.White;
+            this.btn_export_excel.Image = global::ControleTickets.Properties.Resources.excel;
+            this.btn_export_excel.Location = new System.Drawing.Point(16, 250);
+            this.btn_export_excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_export_excel.Name = "btn_export_excel";
+            this.btn_export_excel.Size = new System.Drawing.Size(38, 34);
+            this.btn_export_excel.TabIndex = 22;
+            this.btn_export_excel.UseVisualStyleBackColor = false;
+            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
             // 
             // btn_CalcularTotalHoras
             // 
@@ -378,23 +396,6 @@ namespace ControleTickets
             this.dtp_DataInicial.Size = new System.Drawing.Size(219, 23);
             this.dtp_DataInicial.TabIndex = 9;
             this.dtp_DataInicial.Value = new System.DateTime(2022, 3, 1, 0, 0, 0, 0);
-            // 
-            // btn_export_excel
-            // 
-            this.btn_export_excel.AutoEllipsis = true;
-            this.btn_export_excel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_export_excel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_export_excel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_export_excel.ForeColor = System.Drawing.Color.White;
-            this.btn_export_excel.Image = global::ControleTickets.Properties.Resources.excel;
-            this.btn_export_excel.Location = new System.Drawing.Point(16, 250);
-            this.btn_export_excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_export_excel.Name = "btn_export_excel";
-            this.btn_export_excel.Size = new System.Drawing.Size(38, 34);
-            this.btn_export_excel.TabIndex = 22;
-            this.btn_export_excel.UseVisualStyleBackColor = false;
-            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
             // 
             // ConsultarTicketsForm
             // 

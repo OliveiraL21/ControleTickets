@@ -14,6 +14,7 @@ namespace ControleTickets
         [STAThread]
         static void Main()
         {
+            Application.CurrentCulture = new System.Globalization.CultureInfo("pt-Br");
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

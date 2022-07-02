@@ -177,7 +177,14 @@ namespace ControleTickets
                         Date = dataInicial
                     };
                     var result = ticketService.GetByDate(ticket);
-                    DatagridViewFill(result);
+                    if(this.tickets.Count == 0)
+                    {
+                        foreach(var element in result)
+                        {
+                            this.tickets.Add(element);
+                        }
+                    }
+                    DatagridViewFill(this.tickets);
                 }
             }
             catch (Exception ex)
@@ -239,7 +246,11 @@ namespace ControleTickets
                 else
                 {
                     dgvTickets.Columns.Add("Total", "Total Horas");
-                    dgvTickets.Columns.Add("Total_HorasDiario", "Total Diario");
+                    if (!dgvTickets.Columns.Contains("Total_HorasDiario"))
+                    {
+                        dgvTickets.Columns.Add("Total_HorasDiario", "Total Diario");
+                    }
+                    
                     for (int i = 0; i < dgvTickets.Rows.Count; i++)
                     {
                         if (dgvTickets.Rows[i].Cells[1].Value.ToString() == ticketId)

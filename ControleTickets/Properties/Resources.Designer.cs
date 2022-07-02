@@ -143,6 +143,16 @@ namespace ControleTickets.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logout {
+            get {
+                object obj = ResourceManager.GetObject("Logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizar {
             get {
                 object obj = ResourceManager.GetObject("minimizar", resourceCulture);
@@ -156,6 +166,16 @@ namespace ControleTickets.Properties {
         internal static System.Drawing.Bitmap tempo {
             get {
                 object obj = ResourceManager.GetObject("tempo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ticket_icon_icons_com_52351 {
+            get {
+                object obj = ResourceManager.GetObject("ticket_icon-icons.com_52351", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

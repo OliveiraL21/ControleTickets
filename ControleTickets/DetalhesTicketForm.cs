@@ -78,6 +78,10 @@ namespace ControleTickets
             }
         }
 
-      
+        private void dt_HoraFinal_ValueChanged(object sender, EventArgs e)
+        {
+            var horaGasta = dt_HoraFinal.Value.TimeOfDay - dt_HoraInicio.Value.TimeOfDay;
+            txt_HorasGastas.Text = horaGasta.ToString(@"hh\:mm");
+        }
     }
 }

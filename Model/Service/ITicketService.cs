@@ -8,6 +8,6 @@ namespace Model.Service
 {
     public interface ITicketService
     {
-        public void ExportarTickets(List<Ticket> tickets);
+        IList<Ticket>FilterTickets(Ticket ticket);
     }
 }

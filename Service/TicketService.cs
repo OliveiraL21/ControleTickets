@@ -47,18 +47,16 @@ namespace Service
             return result;
         }
 
-        public void ExportarTickets(List<Ticket> tickets)
+        public IList<Ticket>FilterTickets(Ticket ticket)
         {
-            int linha = 1, coluna = 1;
-           
-            Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
-            app.Visible = true;
-            Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
-            Microsoft.Office.Interop.Excel.Worksheets ws = wb.Worksheets[1] as Microsoft.Office.Interop.Excel.Worksheets;
-            
-            foreach(var ticket in tickets)
+            try
             {
-               
+                var result =  ticketDAL.FilterTicekets(ticket);
+                return result;
+            }
+            catch
+            {
+                throw;
             }
         }
     }

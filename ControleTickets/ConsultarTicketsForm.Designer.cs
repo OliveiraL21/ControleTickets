@@ -49,6 +49,7 @@ namespace ControleTickets
             this.lb_Titulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_CalcularTotalDiario = new System.Windows.Forms.Button();
             this.btn_export_excel = new System.Windows.Forms.Button();
             this.btn_CalcularTotalHoras = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@ namespace ControleTickets
             this.lbl_DataInicio = new System.Windows.Forms.Label();
             this.btn_Consultar = new System.Windows.Forms.Button();
             this.dtp_DataInicial = new System.Windows.Forms.DateTimePicker();
-            this.btn_CalcularTotalDiario = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.panel1.SuspendLayout();
@@ -242,7 +242,6 @@ namespace ControleTickets
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(953, 449);
             this.panel1.TabIndex = 11;
-           
             // 
             // panel2
             // 
@@ -260,12 +259,24 @@ namespace ControleTickets
             this.panel2.Size = new System.Drawing.Size(74, 351);
             this.panel2.TabIndex = 17;
             // 
+            // btn_CalcularTotalDiario
+            // 
+            this.btn_CalcularTotalDiario.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CalcularTotalDiario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CalcularTotalDiario.Image = global::ControleTickets.Properties.Resources.tempo;
+            this.btn_CalcularTotalDiario.Location = new System.Drawing.Point(17, 203);
+            this.btn_CalcularTotalDiario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_CalcularTotalDiario.Name = "btn_CalcularTotalDiario";
+            this.btn_CalcularTotalDiario.Size = new System.Drawing.Size(38, 40);
+            this.btn_CalcularTotalDiario.TabIndex = 23;
+            this.btn_CalcularTotalDiario.UseVisualStyleBackColor = false;
+            this.btn_CalcularTotalDiario.Click += new System.EventHandler(this.btn_CalcularTotalDiario_Click);
+            // 
             // btn_export_excel
             // 
             this.btn_export_excel.AutoEllipsis = true;
             this.btn_export_excel.BackColor = System.Drawing.Color.Transparent;
             this.btn_export_excel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export_excel.Enabled = false;
             this.btn_export_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_export_excel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_export_excel.ForeColor = System.Drawing.Color.White;
@@ -400,19 +411,6 @@ namespace ControleTickets
             this.dtp_DataInicial.Size = new System.Drawing.Size(219, 23);
             this.dtp_DataInicial.TabIndex = 9;
             this.dtp_DataInicial.Value = new System.DateTime(2022, 3, 1, 0, 0, 0, 0);
-            // 
-            // btn_CalcularTotalDiario
-            // 
-            this.btn_CalcularTotalDiario.BackColor = System.Drawing.Color.Transparent;
-            this.btn_CalcularTotalDiario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_CalcularTotalDiario.Image = global::ControleTickets.Properties.Resources.tempo;
-            this.btn_CalcularTotalDiario.Location = new System.Drawing.Point(17, 203);
-            this.btn_CalcularTotalDiario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_CalcularTotalDiario.Name = "btn_CalcularTotalDiario";
-            this.btn_CalcularTotalDiario.Size = new System.Drawing.Size(38, 40);
-            this.btn_CalcularTotalDiario.TabIndex = 23;
-            this.btn_CalcularTotalDiario.UseVisualStyleBackColor = false;
-            this.btn_CalcularTotalDiario.Click += new System.EventHandler(this.btn_CalcularTotalDiario_Click);
             // 
             // ConsultarTicketsForm
             // 

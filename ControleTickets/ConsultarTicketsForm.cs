@@ -160,7 +160,7 @@ namespace ControleTickets
             try
             {
                 totalDiario = Convert.ToDateTime(DateTime.Now.Date.Date.ToShortTimeString());
-                if (!string.IsNullOrEmpty(txt_Codigo.Text))
+                if (!string.IsNullOrEmpty(txt_Codigo.Text) && string.IsNullOrEmpty(dtp_DataInicial.Text))
                 {
                     Ticket ticket = new Ticket()
                     {
@@ -169,7 +169,7 @@ namespace ControleTickets
                     var result = ticketService.Get(ticket);
                     DatagridViewFill(result);
                 }
-                else
+                if(!string.IsNullOrEmpty(dtp_DataInicial.Text) && string.IsNullOrEmpty(txt_Codigo.Text))
                 {
                     var dataInicial = dtp_DataInicial.Value;
                     Ticket ticket = new Ticket()
@@ -183,9 +183,21 @@ namespace ControleTickets
                         {
                             this.tickets.Add(element);
                         }
+                        DatagridViewFill(this.tickets);
                     }
-                    DatagridViewFill(this.tickets);
+                    else
+                    {
+                        DatagridViewFill(result);
+                    }
+                   
                 }
+                if(!string.IsNullOrEmpty(txt_Codigo.Text) && !string.IsNullOrEmpty(dtp_DataInicial.Text))
+                {
+                    Ticket ticket = new Ticket() { Codigo = txt_Codigo.Text, Date = Convert.ToDateTime(dtp_DataInicial.Value.ToShortDateString()) };
+                    var result = ticketService.FilterTickets(ticket);
+                    DatagridViewFill(result);
+                }
+               
             }
             catch (Exception ex)
             {
@@ -280,16 +292,41 @@ namespace ControleTickets
         {
             try
             {
-                List<Ticket>tickets = new List<Ticket>();
-                if (dgvTickets.Rows != null && dgvTickets.Rows.Count > 0)
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                app.Visible = true;
+                Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
+                Microsoft.Office.Interop.Excel.Worksheet ws = wb.Worksheets[1] as Microsoft.Office.Interop.Excel.Worksheet;
+                int linha = 2, coluna = 1, contador = 0;
+                ws.Cells[1, 1] = dgvTickets.Columns[0].HeaderText.ToString();
+                ws.Cells[1, 2] = dgvTickets.Columns[1].HeaderText.ToString();
+                ws.Cells[1, 3] = dgvTickets.Columns[2].HeaderText.ToString();
+                ws.Cells[1, 4] = dgvTickets.Columns[3].HeaderText.ToString();
+                ws.Cells[1, 5] = dgvTickets.Columns[4].HeaderText.ToString();
+                ws.Cells[1, 6] = dgvTickets.Columns[5].HeaderText.ToString();
+                ws.Cells[1, 7] = dgvTickets.Columns[6].HeaderText.ToString();
+                if(dgvTickets.Columns.Contains("Total") && dgvTickets.Columns.Contains("Total_HorasDiario"))
                 {
-                    foreach (var ticket in dgvTickets.Rows)
+                    ws.Cells[1, 8] = dgvTickets.Columns[7].HeaderText.ToString();
+                    ws.Cells[1,9] = dgvTickets.Columns[8].HeaderText.ToString();
+                }
+                if (dgvTickets.Columns.Contains("Total_HorasDiario"))
+                {
+                    ws.Cells[1, 8] = dgvTickets.Columns[7].HeaderText;
+                }
+                foreach (var dgvRow in dgvTickets.Rows)
+                {
+                    coluna = 1;
+                    foreach(var dgvColumn in dgvTickets.Columns)
                     {
-                        tickets.Add(ticket as Ticket);
+                        ws.Cells[linha, coluna] = dgvTickets.Rows[contador].Cells[coluna].Value.ToString();
+                        coluna++;
+                        contador++;
                     }
-                    ticketService.ExportarTickets(tickets);
+                    linha++;
+                   
                 }
             }
+
             catch
             {
 

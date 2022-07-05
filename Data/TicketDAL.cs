@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Microsoft.EntityFrameworkCore;
+using Model;
 using Model.Repositorios;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,19 @@ namespace Data
             else
             {
                 return false;
+            }
+        }
+
+        public IList<Ticket>FilterTicekets(Ticket ticket)
+        {
+            try
+            {
+                var result =  _context.tickets.Where(t => t.Codigo == ticket.Codigo && t.Date == ticket.Date).ToList();
+                return result;
+            }
+            catch
+            {
+                throw;
             }
         }
     }

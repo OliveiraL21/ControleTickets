@@ -50,7 +50,6 @@ namespace ControleTickets
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_CalcularTotalDiario = new System.Windows.Forms.Button();
-            this.btn_export_excel = new System.Windows.Forms.Button();
             this.btn_CalcularTotalHoras = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Atualizar = new System.Windows.Forms.Button();
@@ -247,7 +246,6 @@ namespace ControleTickets
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.btn_CalcularTotalDiario);
-            this.panel2.Controls.Add(this.btn_export_excel);
             this.panel2.Controls.Add(this.btn_CalcularTotalHoras);
             this.panel2.Controls.Add(this.btn_Delete);
             this.panel2.Controls.Add(this.btn_Atualizar);
@@ -271,23 +269,6 @@ namespace ControleTickets
             this.btn_CalcularTotalDiario.TabIndex = 23;
             this.btn_CalcularTotalDiario.UseVisualStyleBackColor = false;
             this.btn_CalcularTotalDiario.Click += new System.EventHandler(this.btn_CalcularTotalDiario_Click);
-            // 
-            // btn_export_excel
-            // 
-            this.btn_export_excel.AutoEllipsis = true;
-            this.btn_export_excel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_export_excel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_export_excel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_export_excel.ForeColor = System.Drawing.Color.White;
-            this.btn_export_excel.Image = global::ControleTickets.Properties.Resources.excel;
-            this.btn_export_excel.Location = new System.Drawing.Point(17, 289);
-            this.btn_export_excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_export_excel.Name = "btn_export_excel";
-            this.btn_export_excel.Size = new System.Drawing.Size(38, 34);
-            this.btn_export_excel.TabIndex = 22;
-            this.btn_export_excel.UseVisualStyleBackColor = false;
-            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
             // 
             // btn_CalcularTotalHoras
             // 
@@ -468,7 +449,6 @@ namespace ControleTickets
         private System.Windows.Forms.Button btn_Detalhes;
         private System.Windows.Forms.Button btn_Atualizar;
         private System.Windows.Forms.Button btn_CalcularTotalHoras;
-        private System.Windows.Forms.Button btn_export_excel;
         private System.Windows.Forms.Button btn_CalcularTotalDiario;
     }
 }

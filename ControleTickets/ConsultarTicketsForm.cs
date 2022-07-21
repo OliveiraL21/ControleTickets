@@ -288,50 +288,7 @@ namespace ControleTickets
             }
         }
 
-        private void btn_export_excel_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
-                app.Visible = true;
-                Microsoft.Office.Interop.Excel.Workbook wb = app.Workbooks.Add(1);
-                Microsoft.Office.Interop.Excel.Worksheet ws = wb.Worksheets[1] as Microsoft.Office.Interop.Excel.Worksheet;
-                int linha = 2, coluna = 1, contador = 0;
-                ws.Cells[1, 1] = dgvTickets.Columns[0].HeaderText.ToString();
-                ws.Cells[1, 2] = dgvTickets.Columns[1].HeaderText.ToString();
-                ws.Cells[1, 3] = dgvTickets.Columns[2].HeaderText.ToString();
-                ws.Cells[1, 4] = dgvTickets.Columns[3].HeaderText.ToString();
-                ws.Cells[1, 5] = dgvTickets.Columns[4].HeaderText.ToString();
-                ws.Cells[1, 6] = dgvTickets.Columns[5].HeaderText.ToString();
-                ws.Cells[1, 7] = dgvTickets.Columns[6].HeaderText.ToString();
-                if(dgvTickets.Columns.Contains("Total") && dgvTickets.Columns.Contains("Total_HorasDiario"))
-                {
-                    ws.Cells[1, 8] = dgvTickets.Columns[7].HeaderText.ToString();
-                    ws.Cells[1,9] = dgvTickets.Columns[8].HeaderText.ToString();
-                }
-                if (dgvTickets.Columns.Contains("Total_HorasDiario"))
-                {
-                    ws.Cells[1, 8] = dgvTickets.Columns[7].HeaderText;
-                }
-                foreach (var dgvRow in dgvTickets.Rows)
-                {
-                    coluna = 1;
-                    foreach(var dgvColumn in dgvTickets.Columns)
-                    {
-                        ws.Cells[linha, coluna] = dgvTickets.Rows[contador].Cells[coluna].Value.ToString();
-                        coluna++;
-                        contador++;
-                    }
-                    linha++;
-                   
-                }
-            }
-
-            catch
-            {
-
-            }
-        }
+      
 
         private void btn_CalcularTotalDiario_Click(object sender, EventArgs e)
         {

@@ -29,7 +29,6 @@ namespace ControleTickets
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketCadastroForm));
             this.lbl_Codigo = new System.Windows.Forms.Label();
             this.lbl_HoraInicio = new System.Windows.Forms.Label();
             this.lbl_HorarioFim = new System.Windows.Forms.Label();
@@ -39,7 +38,7 @@ namespace ControleTickets
             this.lbl_descricao = new System.Windows.Forms.Label();
             this.txt_Decricao = new System.Windows.Forms.TextBox();
             this.txt_HorasGastas = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Inserir = new System.Windows.Forms.Button();
             this.dt_HoraFinal = new System.Windows.Forms.DateTimePicker();
             this.dt_HoraInicio = new System.Windows.Forms.DateTimePicker();
             this.dt_Data = new System.Windows.Forms.DateTimePicker();
@@ -110,7 +109,7 @@ namespace ControleTickets
             this.panel1.Controls.Add(this.lbl_descricao);
             this.panel1.Controls.Add(this.txt_Decricao);
             this.panel1.Controls.Add(this.txt_HorasGastas);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_Inserir);
             this.panel1.Controls.Add(this.dt_HoraFinal);
             this.panel1.Controls.Add(this.dt_HoraInicio);
             this.panel1.Controls.Add(this.dt_Data);
@@ -154,21 +153,21 @@ namespace ControleTickets
             this.txt_HorasGastas.Size = new System.Drawing.Size(128, 23);
             this.txt_HorasGastas.TabIndex = 10;
             // 
-            // button1
+            // btn_Inserir
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(536, 56);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 33);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Inserir";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Inserir.BackColor = System.Drawing.Color.DarkBlue;
+            this.btn_Inserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Inserir.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Inserir.ForeColor = System.Drawing.Color.White;
+            this.btn_Inserir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Inserir.Location = new System.Drawing.Point(536, 56);
+            this.btn_Inserir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Inserir.Name = "btn_Inserir";
+            this.btn_Inserir.Size = new System.Drawing.Size(121, 33);
+            this.btn_Inserir.TabIndex = 9;
+            this.btn_Inserir.Text = "Inserir";
+            this.btn_Inserir.UseVisualStyleBackColor = false;
+            this.btn_Inserir.Click += new System.EventHandler(this.btn_Inserir_Click);
             // 
             // dt_HoraFinal
             // 
@@ -179,6 +178,7 @@ namespace ControleTickets
             this.dt_HoraFinal.Name = "dt_HoraFinal";
             this.dt_HoraFinal.Size = new System.Drawing.Size(128, 23);
             this.dt_HoraFinal.TabIndex = 8;
+            this.dt_HoraFinal.ValueChanged += new System.EventHandler(this.dt_HoraFinal_ValueChanged);
             // 
             // dt_HoraInicio
             // 
@@ -231,23 +231,21 @@ namespace ControleTickets
             this.consultarToolStripMenuItem});
             this.inserirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.inserirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem.Image")));
+            this.inserirToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.ticket_icon_icons_com_52351;
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
             this.inserirToolStripMenuItem.Size = new System.Drawing.Size(77, 30);
             this.inserirToolStripMenuItem.Text = "Ticket";
             // 
             // inserirToolStripMenuItem1
             // 
-            this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             // 
             // consultarToolStripMenuItem
             // 
-            this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -256,7 +254,7 @@ namespace ControleTickets
             this.sairToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.sairToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sairToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.sairToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sairToolStripMenuItem.Image")));
+            this.sairToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.Logout;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(60, 30);
             this.sairToolStripMenuItem.Text = "Sair";
@@ -293,7 +291,6 @@ namespace ControleTickets
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TicketCadastroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -317,7 +314,7 @@ namespace ControleTickets
         private System.Windows.Forms.Label lbl_HorasGastas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txt_HorasGastas;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Inserir;
         private System.Windows.Forms.DateTimePicker dt_HoraFinal;
         private System.Windows.Forms.DateTimePicker dt_HoraInicio;
         private System.Windows.Forms.DateTimePicker dt_Data;

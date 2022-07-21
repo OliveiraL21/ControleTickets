@@ -63,7 +63,8 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(853, 45);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(746, 34);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,14 +78,14 @@ namespace ControleTickets
             this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.inserirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem.Image")));
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
-            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(88, 41);
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(77, 30);
             this.inserirToolStripMenuItem.Text = "Ticket";
             // 
             // inserirToolStripMenuItem1
             // 
             this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
             // 
@@ -92,7 +93,7 @@ namespace ControleTickets
             // 
             this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -103,7 +104,7 @@ namespace ControleTickets
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(69, 41);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 30);
             this.toolStripMenuItem1.Text = "Sair";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -114,58 +115,64 @@ namespace ControleTickets
             this.minimizarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.minimizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("minimizarToolStripMenuItem.Image")));
             this.minimizarToolStripMenuItem.Name = "minimizarToolStripMenuItem";
-            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(113, 41);
+            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(94, 30);
             this.minimizarToolStripMenuItem.Text = "Minimizar";
             this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
             // txt_HorasGastas
             // 
-            this.txt_HorasGastas.Location = new System.Drawing.Point(417, 161);
+            this.txt_HorasGastas.Location = new System.Drawing.Point(365, 121);
+            this.txt_HorasGastas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_HorasGastas.Name = "txt_HorasGastas";
-            this.txt_HorasGastas.Size = new System.Drawing.Size(146, 27);
+            this.txt_HorasGastas.Size = new System.Drawing.Size(128, 23);
             this.txt_HorasGastas.TabIndex = 20;
             // 
             // dt_HoraFinal
             // 
             this.dt_HoraFinal.CalendarFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dt_HoraFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dt_HoraFinal.Location = new System.Drawing.Point(417, 121);
+            this.dt_HoraFinal.Location = new System.Drawing.Point(365, 91);
+            this.dt_HoraFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_HoraFinal.Name = "dt_HoraFinal";
-            this.dt_HoraFinal.Size = new System.Drawing.Size(146, 27);
+            this.dt_HoraFinal.Size = new System.Drawing.Size(128, 23);
             this.dt_HoraFinal.TabIndex = 19;
+            this.dt_HoraFinal.ValueChanged += new System.EventHandler(this.dt_HoraFinal_ValueChanged);
             // 
             // dt_HoraInicio
             // 
             this.dt_HoraInicio.CustomFormat = "HH:mm";
             this.dt_HoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dt_HoraInicio.Location = new System.Drawing.Point(137, 123);
+            this.dt_HoraInicio.Location = new System.Drawing.Point(120, 92);
+            this.dt_HoraInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_HoraInicio.Name = "dt_HoraInicio";
-            this.dt_HoraInicio.Size = new System.Drawing.Size(138, 27);
+            this.dt_HoraInicio.Size = new System.Drawing.Size(121, 23);
             this.dt_HoraInicio.TabIndex = 18;
             // 
             // dt_Data
             // 
             this.dt_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_Data.Location = new System.Drawing.Point(137, 165);
+            this.dt_Data.Location = new System.Drawing.Point(120, 124);
+            this.dt_Data.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_Data.Name = "dt_Data";
-            this.dt_Data.Size = new System.Drawing.Size(138, 27);
+            this.dt_Data.Size = new System.Drawing.Size(121, 23);
             this.dt_Data.TabIndex = 17;
             this.dt_Data.Value = new System.DateTime(2022, 2, 23, 21, 56, 50, 0);
             // 
             // txt_Codigo
             // 
-            this.txt_Codigo.Location = new System.Drawing.Point(137, 86);
+            this.txt_Codigo.Location = new System.Drawing.Point(120, 64);
+            this.txt_Codigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Codigo.Name = "txt_Codigo";
-            this.txt_Codigo.Size = new System.Drawing.Size(138, 27);
+            this.txt_Codigo.Size = new System.Drawing.Size(121, 23);
             this.txt_Codigo.TabIndex = 16;
             // 
             // lbl_HoraInicio
             // 
             this.lbl_HoraInicio.AutoSize = true;
             this.lbl_HoraInicio.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HoraInicio.Location = new System.Drawing.Point(0, 127);
+            this.lbl_HoraInicio.Location = new System.Drawing.Point(0, 95);
             this.lbl_HoraInicio.Name = "lbl_HoraInicio";
-            this.lbl_HoraInicio.Size = new System.Drawing.Size(123, 23);
+            this.lbl_HoraInicio.Size = new System.Drawing.Size(105, 19);
             this.lbl_HoraInicio.TabIndex = 12;
             this.lbl_HoraInicio.Text = "Horário Inicial";
             // 
@@ -173,9 +180,9 @@ namespace ControleTickets
             // 
             this.lbl_HorasGastas.AutoSize = true;
             this.lbl_HorasGastas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorasGastas.Location = new System.Drawing.Point(292, 168);
+            this.lbl_HorasGastas.Location = new System.Drawing.Point(256, 126);
             this.lbl_HorasGastas.Name = "lbl_HorasGastas";
-            this.lbl_HorasGastas.Size = new System.Drawing.Size(110, 20);
+            this.lbl_HorasGastas.Size = new System.Drawing.Size(86, 15);
             this.lbl_HorasGastas.TabIndex = 15;
             this.lbl_HorasGastas.Text = "Total de Horas";
             // 
@@ -183,9 +190,9 @@ namespace ControleTickets
             // 
             this.lbl_Codigo.AutoSize = true;
             this.lbl_Codigo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Codigo.Location = new System.Drawing.Point(55, 90);
+            this.lbl_Codigo.Location = new System.Drawing.Point(48, 68);
             this.lbl_Codigo.Name = "lbl_Codigo";
-            this.lbl_Codigo.Size = new System.Drawing.Size(68, 23);
+            this.lbl_Codigo.Size = new System.Drawing.Size(58, 19);
             this.lbl_Codigo.TabIndex = 11;
             this.lbl_Codigo.Text = "Código";
             // 
@@ -193,9 +200,9 @@ namespace ControleTickets
             // 
             this.lbl_Data.AutoSize = true;
             this.lbl_Data.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Data.Location = new System.Drawing.Point(75, 165);
+            this.lbl_Data.Location = new System.Drawing.Point(66, 124);
             this.lbl_Data.Name = "lbl_Data";
-            this.lbl_Data.Size = new System.Drawing.Size(48, 23);
+            this.lbl_Data.Size = new System.Drawing.Size(40, 19);
             this.lbl_Data.TabIndex = 14;
             this.lbl_Data.Text = "Data";
             // 
@@ -203,28 +210,29 @@ namespace ControleTickets
             // 
             this.lbl_HorarioFim.AutoSize = true;
             this.lbl_HorarioFim.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_HorarioFim.Location = new System.Drawing.Point(289, 123);
+            this.lbl_HorarioFim.Location = new System.Drawing.Point(253, 92);
             this.lbl_HorarioFim.Name = "lbl_HorarioFim";
-            this.lbl_HorarioFim.Size = new System.Drawing.Size(114, 23);
+            this.lbl_HorarioFim.Size = new System.Drawing.Size(97, 19);
             this.lbl_HorarioFim.TabIndex = 13;
             this.lbl_HorarioFim.Text = "Horário Final";
             // 
             // txt_Decricao
             // 
             this.txt_Decricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Decricao.Location = new System.Drawing.Point(137, 231);
+            this.txt_Decricao.Location = new System.Drawing.Point(120, 173);
+            this.txt_Decricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Decricao.Multiline = true;
             this.txt_Decricao.Name = "txt_Decricao";
-            this.txt_Decricao.Size = new System.Drawing.Size(668, 283);
+            this.txt_Decricao.Size = new System.Drawing.Size(585, 213);
             this.txt_Decricao.TabIndex = 21;
             // 
             // lbl_descricao
             // 
             this.lbl_descricao.AutoSize = true;
             this.lbl_descricao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_descricao.Location = new System.Drawing.Point(28, 234);
+            this.lbl_descricao.Location = new System.Drawing.Point(24, 176);
             this.lbl_descricao.Name = "lbl_descricao";
-            this.lbl_descricao.Size = new System.Drawing.Size(103, 23);
+            this.lbl_descricao.Size = new System.Drawing.Size(89, 19);
             this.lbl_descricao.TabIndex = 22;
             this.lbl_descricao.Text = "Descricação";
             // 
@@ -236,9 +244,10 @@ namespace ControleTickets
             this.btn_Editar.ForeColor = System.Drawing.Color.White;
             this.btn_Editar.Image = global::ControleTickets.Properties.Resources.botao_editar;
             this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Editar.Location = new System.Drawing.Point(590, 157);
+            this.btn_Editar.Location = new System.Drawing.Point(516, 118);
+            this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(148, 49);
+            this.btn_Editar.Size = new System.Drawing.Size(130, 37);
             this.btn_Editar.TabIndex = 23;
             this.btn_Editar.Text = "Editar";
             this.btn_Editar.UseVisualStyleBackColor = false;
@@ -246,10 +255,10 @@ namespace ControleTickets
             // 
             // DetalhesTicketForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(853, 591);
+            this.ClientSize = new System.Drawing.Size(746, 443);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.lbl_descricao);
             this.Controls.Add(this.txt_Decricao);
@@ -266,6 +275,7 @@ namespace ControleTickets
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DetalhesTicketForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetalhesTicketForm";

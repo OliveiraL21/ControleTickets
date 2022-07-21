@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace ControleTickets
     public partial class ConsultarTicketsForm : Form
     {
         private readonly TicketService ticketService;
+        private List<Ticket> tickets = new List<Ticket>();
         
         private DateTime totalDiario;
         public ConsultarTicketsForm()
@@ -67,8 +69,13 @@ namespace ControleTickets
 
             dtp_DataInicial.Value = DateTime.Now;
             Ticket ticket = new Ticket() { Date = Convert.ToDateTime(DateTime.Now.Date.ToShortDateString()) };
-            var tickets = ticketService.GetByDate(ticket);
-            DatagridViewFill(tickets);
+            var lstTickets = ticketService.GetByDate(ticket);
+            foreach(var Ticket in lstTickets)
+            {
+                this.tickets.Add(Ticket);
+            }
+
+            DatagridViewFill(this.tickets);
         }
         #region Front-end
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -153,7 +160,7 @@ namespace ControleTickets
             try
             {
                 totalDiario = Convert.ToDateTime(DateTime.Now.Date.Date.ToShortTimeString());
-                if (!string.IsNullOrEmpty(txt_Codigo.Text))
+                if (!string.IsNullOrEmpty(txt_Codigo.Text) && string.IsNullOrEmpty(dtp_DataInicial.Text))
                 {
                     Ticket ticket = new Ticket()
                     {
@@ -162,7 +169,7 @@ namespace ControleTickets
                     var result = ticketService.Get(ticket);
                     DatagridViewFill(result);
                 }
-                else
+                if(!string.IsNullOrEmpty(dtp_DataInicial.Text) && string.IsNullOrEmpty(txt_Codigo.Text))
                 {
                     var dataInicial = dtp_DataInicial.Value;
                     Ticket ticket = new Ticket()
@@ -170,8 +177,27 @@ namespace ControleTickets
                         Date = dataInicial
                     };
                     var result = ticketService.GetByDate(ticket);
+                    if(this.tickets.Count == 0)
+                    {
+                        foreach(var element in result)
+                        {
+                            this.tickets.Add(element);
+                        }
+                        DatagridViewFill(this.tickets);
+                    }
+                    else
+                    {
+                        DatagridViewFill(result);
+                    }
+                   
+                }
+                if(!string.IsNullOrEmpty(txt_Codigo.Text) && !string.IsNullOrEmpty(dtp_DataInicial.Text))
+                {
+                    Ticket ticket = new Ticket() { Codigo = txt_Codigo.Text, Date = Convert.ToDateTime(dtp_DataInicial.Value.ToShortDateString()) };
+                    var result = ticketService.FilterTickets(ticket);
                     DatagridViewFill(result);
                 }
+               
             }
             catch (Exception ex)
             {
@@ -232,7 +258,11 @@ namespace ControleTickets
                 else
                 {
                     dgvTickets.Columns.Add("Total", "Total Horas");
-                    dgvTickets.Columns.Add("Total_HorasDiario", "Horas Diaria");
+                    if (!dgvTickets.Columns.Contains("Total_HorasDiario"))
+                    {
+                        dgvTickets.Columns.Add("Total_HorasDiario", "Total Diario");
+                    }
+                    
                     for (int i = 0; i < dgvTickets.Rows.Count; i++)
                     {
                         if (dgvTickets.Rows[i].Cells[1].Value.ToString() == ticketId)
@@ -255,6 +285,44 @@ namespace ControleTickets
             finally
             {
                 txt_Codigo.Text = "";
+            }
+        }
+
+      
+
+        private void btn_CalcularTotalDiario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dgvTickets.Rows != null || dgvTickets.Rows.Count > 0)
+                {
+                    var time = new TimeSpan();
+                    foreach (var ticket in this.tickets)
+                    {
+                        time += ticket.TotalHorasGasto.Value.TimeOfDay;
+                    }
+                    if (dgvTickets.Columns.Contains("Total") && dgvTickets.Columns.Contains("Total_HorasDiario"))
+                    {
+                        dgvTickets.Rows[0].Cells[8].Value = time.ToString(@"hh\:mm");
+                    }
+                    if (dgvTickets.Columns.Contains("Total_HorasDiario") && !dgvTickets.Columns.Contains("Total"))
+                    {
+                        dgvTickets.Rows[0].Cells[7].Value = time.ToString(@"hh\:mm");
+                    }
+                    if (!dgvTickets.Columns.Contains("Total_HorasDiario") && !dgvTickets.Columns.Contains("Total"))
+                    {
+                        dgvTickets.Columns.Add("Total_HorasDiario", "Total Diario");
+                        dgvTickets.Rows[0].Cells[7].Value = time.ToString(@"hh\:mm");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Insira novos ticketes para o calculo de total diario", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao tentar calcular dados dos tickets {ex.Message}.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

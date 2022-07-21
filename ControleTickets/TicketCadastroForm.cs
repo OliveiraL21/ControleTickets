@@ -15,6 +15,7 @@ namespace ControleTickets
     public partial class TicketCadastroForm : Form
     {
         private TicketService ticketService;
+        private TimeSpan horaGasta;
         public TicketCadastroForm()
         {
             InitializeComponent();
@@ -30,12 +31,10 @@ namespace ControleTickets
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_Inserir_Click(object sender, EventArgs e)
         {
             try
             {
-                var horaGasta = TotalDeHorasGastas(dt_HoraInicio.Value.TimeOfDay, dt_HoraFinal.Value.TimeOfDay);
-                txt_HorasGastas.Text = horaGasta.ToString(@"hh\:mm");
                 var result = ticketService.InserirTicket(new Ticket
                 {
                     Codigo = txt_Codigo.Text.ToUpper(),
@@ -43,7 +42,7 @@ namespace ControleTickets
                     HorarioFinal = Convert.ToDateTime(dt_HoraFinal.Value.ToShortTimeString()),
                     Date = dt_Data.Value.Date,
                     Descricao = txt_Decricao.Text,
-                    TotalHorasGasto = Convert.ToDateTime(horaGasta.ToString(@"hh\:mm"))
+                    TotalHorasGasto = Convert.ToDateTime(this.horaGasta.ToString(@"hh\:mm"))
                 });
                 if (result)
                 {
@@ -88,6 +87,12 @@ namespace ControleTickets
             dt_Data.Value = DateTime.Now;
             dt_HoraInicio.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
             dt_HoraFinal.Value = Convert.ToDateTime(DateTime.Now.ToShortTimeString());
+        }
+
+        private void dt_HoraFinal_ValueChanged(object sender, EventArgs e)
+        {
+             this.horaGasta = TotalDeHorasGastas(dt_HoraInicio.Value.TimeOfDay, dt_HoraFinal.Value.TimeOfDay);
+            txt_HorasGastas.Text = this.horaGasta.ToString(@"hh\:mm");
         }
     }
 }

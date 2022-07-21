@@ -49,7 +49,7 @@ namespace ControleTickets
             this.lb_Titulo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_export_excel = new System.Windows.Forms.Button();
+            this.btn_CalcularTotalDiario = new System.Windows.Forms.Button();
             this.btn_CalcularTotalHoras = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Atualizar = new System.Windows.Forms.Button();
@@ -78,7 +78,7 @@ namespace ControleTickets
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(945, 34);
+            this.menuStrip1.Size = new System.Drawing.Size(953, 34);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -239,48 +239,43 @@ namespace ControleTickets
             this.panel1.Location = new System.Drawing.Point(0, 94);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 430);
+            this.panel1.Size = new System.Drawing.Size(953, 449);
             this.panel1.TabIndex = 11;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.btn_export_excel);
+            this.panel2.Controls.Add(this.btn_CalcularTotalDiario);
             this.panel2.Controls.Add(this.btn_CalcularTotalHoras);
             this.panel2.Controls.Add(this.btn_Delete);
             this.panel2.Controls.Add(this.btn_Atualizar);
             this.panel2.Controls.Add(this.btn_Detalhes);
             this.panel2.Controls.Add(this.lbl_Acoes);
-            this.panel2.Location = new System.Drawing.Point(872, 122);
+            this.panel2.Location = new System.Drawing.Point(876, 98);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(74, 286);
+            this.panel2.Size = new System.Drawing.Size(74, 351);
             this.panel2.TabIndex = 17;
             // 
-            // btn_export_excel
+            // btn_CalcularTotalDiario
             // 
-            this.btn_export_excel.AutoEllipsis = true;
-            this.btn_export_excel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_export_excel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_export_excel.Enabled = false;
-            this.btn_export_excel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_export_excel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_export_excel.ForeColor = System.Drawing.Color.White;
-            this.btn_export_excel.Image = global::ControleTickets.Properties.Resources.excel;
-            this.btn_export_excel.Location = new System.Drawing.Point(16, 250);
-            this.btn_export_excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_export_excel.Name = "btn_export_excel";
-            this.btn_export_excel.Size = new System.Drawing.Size(38, 34);
-            this.btn_export_excel.TabIndex = 22;
-            this.btn_export_excel.UseVisualStyleBackColor = false;
-            this.btn_export_excel.Click += new System.EventHandler(this.btn_export_excel_Click);
+            this.btn_CalcularTotalDiario.BackColor = System.Drawing.Color.Transparent;
+            this.btn_CalcularTotalDiario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CalcularTotalDiario.Image = global::ControleTickets.Properties.Resources.tempo;
+            this.btn_CalcularTotalDiario.Location = new System.Drawing.Point(17, 203);
+            this.btn_CalcularTotalDiario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_CalcularTotalDiario.Name = "btn_CalcularTotalDiario";
+            this.btn_CalcularTotalDiario.Size = new System.Drawing.Size(38, 40);
+            this.btn_CalcularTotalDiario.TabIndex = 23;
+            this.btn_CalcularTotalDiario.UseVisualStyleBackColor = false;
+            this.btn_CalcularTotalDiario.Click += new System.EventHandler(this.btn_CalcularTotalDiario_Click);
             // 
             // btn_CalcularTotalHoras
             // 
             this.btn_CalcularTotalHoras.BackColor = System.Drawing.Color.Transparent;
             this.btn_CalcularTotalHoras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_CalcularTotalHoras.Image = global::ControleTickets.Properties.Resources.adicionar;
-            this.btn_CalcularTotalHoras.Location = new System.Drawing.Point(17, 150);
+            this.btn_CalcularTotalHoras.Location = new System.Drawing.Point(17, 161);
             this.btn_CalcularTotalHoras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CalcularTotalHoras.Name = "btn_CalcularTotalHoras";
             this.btn_CalcularTotalHoras.Size = new System.Drawing.Size(38, 38);
@@ -297,7 +292,7 @@ namespace ControleTickets
             this.btn_Delete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
             this.btn_Delete.Image = global::ControleTickets.Properties.Resources.excluir;
-            this.btn_Delete.Location = new System.Drawing.Point(16, 202);
+            this.btn_Delete.Location = new System.Drawing.Point(17, 249);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(38, 34);
@@ -310,7 +305,7 @@ namespace ControleTickets
             this.btn_Atualizar.BackColor = System.Drawing.Color.Transparent;
             this.btn_Atualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Atualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Atualizar.Image")));
-            this.btn_Atualizar.Location = new System.Drawing.Point(17, 98);
+            this.btn_Atualizar.Location = new System.Drawing.Point(17, 117);
             this.btn_Atualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Atualizar.Name = "btn_Atualizar";
             this.btn_Atualizar.Size = new System.Drawing.Size(38, 38);
@@ -323,7 +318,7 @@ namespace ControleTickets
             this.btn_Detalhes.BackColor = System.Drawing.Color.Transparent;
             this.btn_Detalhes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Detalhes.Image = ((System.Drawing.Image)(resources.GetObject("btn_Detalhes.Image")));
-            this.btn_Detalhes.Location = new System.Drawing.Point(17, 46);
+            this.btn_Detalhes.Location = new System.Drawing.Point(17, 73);
             this.btn_Detalhes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Detalhes.Name = "btn_Detalhes";
             this.btn_Detalhes.Size = new System.Drawing.Size(38, 38);
@@ -333,11 +328,12 @@ namespace ControleTickets
             // 
             // lbl_Acoes
             // 
+            this.lbl_Acoes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbl_Acoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbl_Acoes.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Acoes.Location = new System.Drawing.Point(3, 0);
+            this.lbl_Acoes.Location = new System.Drawing.Point(0, 24);
             this.lbl_Acoes.Name = "lbl_Acoes";
-            this.lbl_Acoes.Size = new System.Drawing.Size(68, 38);
+            this.lbl_Acoes.Size = new System.Drawing.Size(74, 38);
             this.lbl_Acoes.TabIndex = 0;
             this.lbl_Acoes.Text = "Ações";
             this.lbl_Acoes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -402,7 +398,7 @@ namespace ControleTickets
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(945, 523);
+            this.ClientSize = new System.Drawing.Size(953, 544);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lb_Titulo);
             this.Controls.Add(this.menuStrip1);
@@ -453,6 +449,6 @@ namespace ControleTickets
         private System.Windows.Forms.Button btn_Detalhes;
         private System.Windows.Forms.Button btn_Atualizar;
         private System.Windows.Forms.Button btn_CalcularTotalHoras;
-        private System.Windows.Forms.Button btn_export_excel;
+        private System.Windows.Forms.Button btn_CalcularTotalDiario;
     }
 }

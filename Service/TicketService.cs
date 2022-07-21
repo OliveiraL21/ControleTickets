@@ -46,5 +46,18 @@ namespace Service
             var result = ticketDAL.DeleteTicket(ticket);
             return result;
         }
+
+        public IList<Ticket>FilterTickets(Ticket ticket)
+        {
+            try
+            {
+                var result =  ticketDAL.FilterTicekets(ticket);
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

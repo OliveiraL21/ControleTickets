@@ -163,9 +163,39 @@ namespace ControleTickets.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search_find_locate_32 {
+            get {
+                object obj = ResourceManager.GetObject("Search_find_locate_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_find_locate_321 {
+            get {
+                object obj = ResourceManager.GetObject("Search_find_locate_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tempo {
             get {
                 object obj = ResourceManager.GetObject("tempo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ticket_add_25321 {
+            get {
+                object obj = ResourceManager.GetObject("ticket-add_25321", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

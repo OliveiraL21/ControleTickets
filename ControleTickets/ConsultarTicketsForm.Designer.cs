@@ -99,15 +99,15 @@ namespace ControleTickets
             // 
             this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem
             // 
-            this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
+            this.consultarToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.Search_find_locate_321;
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // toolStripMenuItem1

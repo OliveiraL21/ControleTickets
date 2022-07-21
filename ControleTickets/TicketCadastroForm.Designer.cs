@@ -182,12 +182,14 @@ namespace ControleTickets
             // 
             // dt_HoraInicio
             // 
+            this.dt_HoraInicio.CustomFormat = "";
             this.dt_HoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dt_HoraInicio.Location = new System.Drawing.Point(141, 34);
             this.dt_HoraInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dt_HoraInicio.Name = "dt_HoraInicio";
             this.dt_HoraInicio.Size = new System.Drawing.Size(121, 23);
             this.dt_HoraInicio.TabIndex = 7;
+            this.dt_HoraInicio.Value = new System.DateTime(2022, 7, 20, 22, 38, 0, 0);
             // 
             // dt_Data
             // 
@@ -238,14 +240,16 @@ namespace ControleTickets
             // 
             // inserirToolStripMenuItem1
             // 
+            this.inserirToolStripMenuItem1.Image = global::ControleTickets.Properties.Resources.ticket_add_25321;
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             // 
             // consultarToolStripMenuItem
             // 
+            this.consultarToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.Search_find_locate_321;
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 

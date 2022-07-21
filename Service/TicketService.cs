@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public class TicketService : ITicketService
+    public class TicketService 
     {
         private TicketDAL ticketDAL;
         public TicketService()

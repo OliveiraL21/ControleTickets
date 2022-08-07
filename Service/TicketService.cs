@@ -59,5 +59,31 @@ namespace Service
                 throw;
             }
         }
+
+        public int TotalHorasTrabalhadas()
+        {
+            try
+            {
+                var result = ticketDAL.TotalHoras();
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public int TotalTicketsRegistrados()
+        {
+            try
+            {
+                var result = ticketDAL.TotalTickets();
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

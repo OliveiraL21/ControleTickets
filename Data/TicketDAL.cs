@@ -80,5 +80,31 @@ namespace Data
                 throw;
             }
         }
+
+        public int TotalHoras()
+        {
+            try
+            {
+                var result = _context.tickets.Sum(x => x.TotalHorasGasto.Value.Hour);
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        public int TotalTickets()
+        {
+            try
+            {
+                var result = _context.tickets.ToList().Count;
+                return result;
+            }
+            catch
+            {
+                throw;
+            }
+        }
     }
 }

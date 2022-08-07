@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Model.Service;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace ControleTickets
 {
     public partial class TicketForm : Form
     {
+        private readonly TicketService _ticketService; 
         public TicketForm()
         {
             InitializeComponent();
+            _ticketService = new TicketService();
         }
 
         private void inserirToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -46,5 +50,23 @@ namespace ControleTickets
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void TicketForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                var totalHoras = _ticketService.TotalHorasTrabalhadas();
+                lbl_valor_total_horas.Text = totalHoras.ToString();
+
+                var totalTickets = _ticketService.TotalTicketsRegistrados();
+                lbl_quantidade.Text = totalTickets.ToString();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao trazer os dados iniciais ! \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+      
     }
 }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,10 +26,6 @@ namespace ControleTickets
         {
             var horaGasta = horaFim.Add(-horaInicio);
             return horaGasta;
-        }
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btn_Inserir_Click(object sender, EventArgs e)
@@ -66,22 +63,6 @@ namespace ControleTickets
             
         }
 
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
-            consultarTickets.Show();
-        }
-
-        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void minimizarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void TicketCadastroForm_Load(object sender, EventArgs e)
         {
             dt_Data.Value = DateTime.Now;
@@ -93,6 +74,24 @@ namespace ControleTickets
         {
              this.horaGasta = TotalDeHorasGastas(dt_HoraInicio.Value.TimeOfDay, dt_HoraFinal.Value.TimeOfDay);
             txt_HorasGastas.Text = this.horaGasta.ToString(@"hh\:mm");
+        }
+
+        private void btn_voltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void btn_menu_inserir_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A tela de cadastro já está aberto !", "Cadastro aberto !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            ConsultarTicketsForm csTicket = new ConsultarTicketsForm();
+            csTicket.Show();
+
         }
     }
 }

@@ -67,6 +67,23 @@ namespace ControleTickets
             }
         }
 
-      
+        private void btn_inserir_Click(object sender, EventArgs e)
+        {
+            TicketCadastroForm cadastroTicket = new TicketCadastroForm();
+            cadastroTicket.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
+            consultarTickets.Show();
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_voltar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

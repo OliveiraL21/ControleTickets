@@ -73,14 +73,14 @@ namespace ControleTickets
             this.inserirToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
-            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
-            this.inserirToolStripMenuItem.Text = "Ticket";
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(66, 30);
+            this.inserirToolStripMenuItem.Text = "Tarefas";
             // 
             // inserirToolStripMenuItem1
             // 
             this.inserirToolStripMenuItem1.Image = global::ControleTickets.Properties.Resources.task_list_square_add_regular_icon_203206;
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
             // 
@@ -88,7 +88,7 @@ namespace ControleTickets
             // 
             this.consultarToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.search_interface_symbol;
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
@@ -249,7 +249,7 @@ namespace ControleTickets
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DetalhesTicketForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DetalhesTicketForm";
+            this.Text = "Detalhes";
             this.Load += new System.EventHandler(this.DetalhesTicketForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

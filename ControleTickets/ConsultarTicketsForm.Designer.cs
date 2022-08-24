@@ -37,6 +37,13 @@ namespace ControleTickets
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.task_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HorarioFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalHorasGasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_Titulo = new System.Windows.Forms.Label();
             this.pl_content = new System.Windows.Forms.Panel();
             this.lbl_Data_Final = new System.Windows.Forms.Label();
@@ -52,12 +59,6 @@ namespace ControleTickets
             this.lbl_DataInicio = new System.Windows.Forms.Label();
             this.btn_Consultar = new System.Windows.Forms.Button();
             this.dtp_DataInicial = new System.Windows.Forms.DateTimePicker();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HorarioFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalHorasGasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
             this.pl_content.SuspendLayout();
@@ -122,6 +123,7 @@ namespace ControleTickets
             this.dgvTickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.task_id,
             this.Codigo,
             this.HoraInicio,
             this.HorarioFinal,
@@ -140,6 +142,55 @@ namespace ControleTickets
             this.dgvTickets.Size = new System.Drawing.Size(836, 286);
             this.dgvTickets.TabIndex = 8;
             this.dgvTickets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTickets_CellClick);
+            // 
+            // task_id
+            // 
+            this.task_id.HeaderText = "ID";
+            this.task_id.Name = "task_id";
+            this.task_id.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // HoraInicio
+            // 
+            this.HoraInicio.HeaderText = "Horário de Inicio";
+            this.HoraInicio.MinimumWidth = 6;
+            this.HoraInicio.Name = "HoraInicio";
+            this.HoraInicio.ReadOnly = true;
+            // 
+            // HorarioFinal
+            // 
+            this.HorarioFinal.HeaderText = "Horário Final";
+            this.HorarioFinal.MinimumWidth = 6;
+            this.HorarioFinal.Name = "HorarioFinal";
+            this.HorarioFinal.ReadOnly = true;
+            // 
+            // TotalHorasGasta
+            // 
+            this.TotalHorasGasta.HeaderText = "Duração";
+            this.TotalHorasGasta.MinimumWidth = 6;
+            this.TotalHorasGasta.Name = "TotalHorasGasta";
+            this.TotalHorasGasta.ReadOnly = true;
+            this.TotalHorasGasta.ToolTipText = "Total de duração";
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data";
+            this.Data.MinimumWidth = 6;
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MinimumWidth = 6;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
             // 
             // lb_Titulo
             // 
@@ -328,49 +379,6 @@ namespace ControleTickets
             this.dtp_DataInicial.TabIndex = 9;
             this.dtp_DataInicial.Value = new System.DateTime(2022, 3, 1, 0, 0, 0, 0);
             // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // HoraInicio
-            // 
-            this.HoraInicio.HeaderText = "Horário de Inicio";
-            this.HoraInicio.MinimumWidth = 6;
-            this.HoraInicio.Name = "HoraInicio";
-            this.HoraInicio.ReadOnly = true;
-            // 
-            // HorarioFinal
-            // 
-            this.HorarioFinal.HeaderText = "Horário Final";
-            this.HorarioFinal.MinimumWidth = 6;
-            this.HorarioFinal.Name = "HorarioFinal";
-            this.HorarioFinal.ReadOnly = true;
-            // 
-            // TotalHorasGasta
-            // 
-            this.TotalHorasGasta.HeaderText = "Duração";
-            this.TotalHorasGasta.MinimumWidth = 6;
-            this.TotalHorasGasta.Name = "TotalHorasGasta";
-            this.TotalHorasGasta.ReadOnly = true;
-            this.TotalHorasGasta.ToolTipText = "Total de duração";
-            // 
-            // Data
-            // 
-            this.Data.HeaderText = "Data";
-            this.Data.MinimumWidth = 6;
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MinimumWidth = 6;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            // 
             // ConsultarTicketsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -411,12 +419,6 @@ namespace ControleTickets
         private System.Windows.Forms.TextBox txt_Codigo;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn TicketId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoraInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalHorasGasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Detalhes;
         private System.Windows.Forms.Button btn_Atualizar;
@@ -424,5 +426,12 @@ namespace ControleTickets
         private System.Windows.Forms.Button btn_CalcularTotalDiario;
         private System.Windows.Forms.Label lbl_Data_Final;
         private System.Windows.Forms.DateTimePicker dt_Data_Final;
+        private System.Windows.Forms.DataGridViewTextBoxColumn task_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalHorasGasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }

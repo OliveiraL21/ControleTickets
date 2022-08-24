@@ -34,8 +34,6 @@ namespace ControleTickets
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.minimizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txt_HorasGastas = new System.Windows.Forms.TextBox();
             this.dt_HoraFinal = new System.Windows.Forms.DateTimePicker();
             this.dt_HoraInicio = new System.Windows.Forms.DateTimePicker();
@@ -55,12 +53,10 @@ namespace ControleTickets
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inserirToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.minimizarToolStripMenuItem});
+            this.inserirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -74,50 +70,27 @@ namespace ControleTickets
             this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inserirToolStripMenuItem1,
             this.consultarToolStripMenuItem});
-            this.inserirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.inserirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem.Image")));
+            this.inserirToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
-            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(77, 30);
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(55, 30);
             this.inserirToolStripMenuItem.Text = "Ticket";
             // 
             // inserirToolStripMenuItem1
             // 
-            this.inserirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inserirToolStripMenuItem1.Image")));
+            this.inserirToolStripMenuItem1.Image = global::ControleTickets.Properties.Resources.task_list_square_add_regular_icon_203206;
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
             this.inserirToolStripMenuItem1.Text = "Inserir";
             this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem
             // 
-            this.consultarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultarToolStripMenuItem.Image")));
+            this.consultarToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.search_interface_symbol;
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 30);
-            this.toolStripMenuItem1.Text = "Sair";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // minimizarToolStripMenuItem
-            // 
-            this.minimizarToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.minimizarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.minimizarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.minimizarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("minimizarToolStripMenuItem.Image")));
-            this.minimizarToolStripMenuItem.Name = "minimizarToolStripMenuItem";
-            this.minimizarToolStripMenuItem.Size = new System.Drawing.Size(94, 30);
-            this.minimizarToolStripMenuItem.Text = "Minimizar";
-            this.minimizarToolStripMenuItem.Click += new System.EventHandler(this.minimizarToolStripMenuItem_Click);
             // 
             // txt_HorasGastas
             // 
@@ -163,7 +136,7 @@ namespace ControleTickets
             this.txt_Codigo.Location = new System.Drawing.Point(120, 64);
             this.txt_Codigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Codigo.Name = "txt_Codigo";
-            this.txt_Codigo.Size = new System.Drawing.Size(121, 23);
+            this.txt_Codigo.Size = new System.Drawing.Size(373, 23);
             this.txt_Codigo.TabIndex = 16;
             // 
             // lbl_HoraInicio
@@ -223,7 +196,7 @@ namespace ControleTickets
             this.txt_Decricao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Decricao.Multiline = true;
             this.txt_Decricao.Name = "txt_Decricao";
-            this.txt_Decricao.Size = new System.Drawing.Size(585, 213);
+            this.txt_Decricao.Size = new System.Drawing.Size(471, 213);
             this.txt_Decricao.TabIndex = 21;
             // 
             // lbl_descricao
@@ -240,16 +213,15 @@ namespace ControleTickets
             // 
             this.btn_Editar.BackColor = System.Drawing.Color.DarkBlue;
             this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Editar.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Editar.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Editar.ForeColor = System.Drawing.Color.White;
-            this.btn_Editar.Image = global::ControleTickets.Properties.Resources.botao_editar;
             this.btn_Editar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Editar.Location = new System.Drawing.Point(516, 118);
+            this.btn_Editar.Location = new System.Drawing.Point(509, 118);
             this.btn_Editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Editar.Name = "btn_Editar";
-            this.btn_Editar.Size = new System.Drawing.Size(130, 37);
+            this.btn_Editar.Size = new System.Drawing.Size(82, 29);
             this.btn_Editar.TabIndex = 23;
-            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.Text = "Salvar";
             this.btn_Editar.UseVisualStyleBackColor = false;
             this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
@@ -257,7 +229,7 @@ namespace ControleTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(746, 443);
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.lbl_descricao);
@@ -273,7 +245,6 @@ namespace ControleTickets
             this.Controls.Add(this.lbl_Data);
             this.Controls.Add(this.lbl_HorarioFim);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "DetalhesTicketForm";
@@ -293,8 +264,6 @@ namespace ControleTickets
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem minimizarToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_HorasGastas;
         private System.Windows.Forms.DateTimePicker dt_HoraFinal;
         private System.Windows.Forms.DateTimePicker dt_HoraInicio;

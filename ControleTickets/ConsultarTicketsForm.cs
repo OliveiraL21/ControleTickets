@@ -54,13 +54,12 @@ namespace ControleTickets
             foreach (var ticket in tickets)
             {
                 dgvTickets.Rows.Add();
-                dgvTickets.Rows[contador].Cells[0].Value = ticket.TicketID;
-                dgvTickets.Rows[contador].Cells[1].Value = ticket.Codigo;
-                dgvTickets.Rows[contador].Cells[2].Value = ticket.HorarioDeInicio.Value.ToShortTimeString();
-                dgvTickets.Rows[contador].Cells[3].Value = ticket.HorarioFinal.Value.ToShortTimeString();
-                dgvTickets.Rows[contador].Cells[4].Value = ticket.TotalHorasGasto.Value.ToShortTimeString();
-                dgvTickets.Rows[contador].Cells[5].Value = ticket.Date.Date.ToShortDateString();
-                dgvTickets.Rows[contador].Cells[6].Value = ticket.Descricao;
+                dgvTickets.Rows[contador].Cells[0].Value = ticket.Codigo;
+                dgvTickets.Rows[contador].Cells[1].Value = ticket.HorarioDeInicio.Value.ToShortTimeString();
+                dgvTickets.Rows[contador].Cells[2].Value = ticket.HorarioFinal.Value.ToShortTimeString();
+                dgvTickets.Rows[contador].Cells[3].Value = ticket.TotalHorasGasto.Value.ToShortTimeString();
+                dgvTickets.Rows[contador].Cells[4].Value = ticket.Date.Date.ToShortDateString();
+                dgvTickets.Rows[contador].Cells[5].Value = ticket.Descricao;
                 contador++;
             }
         }
@@ -78,15 +77,6 @@ namespace ControleTickets
             DatagridViewFill(this.tickets);
         }
         #region Front-end
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void minimizarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
         private void inserirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             TicketCadastroForm ticketCadastro = new TicketCadastroForm();

@@ -76,22 +76,10 @@ namespace ControleTickets
             txt_HorasGastas.Text = this.horaGasta.ToString(@"hh\:mm");
         }
 
-        private void btn_voltar_Click(object sender, EventArgs e)
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-            
-        }
-
-        private void btn_menu_inserir_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("A tela de cadastro já está aberto !", "Cadastro aberto !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btn_consultar_Click(object sender, EventArgs e)
-        {
-            ConsultarTicketsForm csTicket = new ConsultarTicketsForm();
-            csTicket.Show();
-
+            ConsultarTicketsForm consultarTickets = new ConsultarTicketsForm();
+            consultarTickets.Show();
         }
     }
 }

@@ -30,47 +30,26 @@ namespace ControleTickets
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketForm));
-            this.lbl_Descricao = new System.Windows.Forms.Label();
-            this.sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             this.lbl_total_horas = new System.Windows.Forms.Label();
             this.lbl_valor_total_horas = new System.Windows.Forms.Label();
             this.lbl_qtdTickets = new System.Windows.Forms.Label();
-            this.lbl_quantidade = new System.Windows.Forms.Label();
+            this.lbl_totalHoras = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_inserir = new System.Windows.Forms.Button();
-            this.btn_consultar = new System.Windows.Forms.Button();
-            this.menu_panel = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.btn_voltar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_qtd = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menu_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbl_Descricao
-            // 
-            this.lbl_Descricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbl_Descricao.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Descricao.ForeColor = System.Drawing.Color.White;
-            this.lbl_Descricao.Location = new System.Drawing.Point(3, 0);
-            this.lbl_Descricao.Name = "lbl_Descricao";
-            this.lbl_Descricao.Size = new System.Drawing.Size(220, 40);
-            this.lbl_Descricao.TabIndex = 1;
-            this.lbl_Descricao.Text = "Controle de Tickets";
-            this.lbl_Descricao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // sqlCommand1
-            // 
-            this.sqlCommand1.CommandTimeout = 30;
-            this.sqlCommand1.Connection = null;
-            this.sqlCommand1.Notification = null;
-            this.sqlCommand1.Transaction = null;
             // 
             // lbl_total_horas
             // 
             this.lbl_total_horas.AutoSize = true;
             this.lbl_total_horas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_total_horas.Location = new System.Drawing.Point(25, 59);
+            this.lbl_total_horas.Location = new System.Drawing.Point(21, 102);
             this.lbl_total_horas.Name = "lbl_total_horas";
             this.lbl_total_horas.Size = new System.Drawing.Size(127, 21);
             this.lbl_total_horas.TabIndex = 2;
@@ -90,19 +69,19 @@ namespace ControleTickets
             // 
             this.lbl_qtdTickets.AutoSize = true;
             this.lbl_qtdTickets.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_qtdTickets.Location = new System.Drawing.Point(22, 99);
+            this.lbl_qtdTickets.Location = new System.Drawing.Point(18, 142);
             this.lbl_qtdTickets.Name = "lbl_qtdTickets";
             this.lbl_qtdTickets.Size = new System.Drawing.Size(191, 21);
             this.lbl_qtdTickets.TabIndex = 4;
             this.lbl_qtdTickets.Text = "Quantidades de Tickets:";
             // 
-            // lbl_quantidade
+            // lbl_totalHoras
             // 
-            this.lbl_quantidade.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_quantidade.Location = new System.Drawing.Point(210, 102);
-            this.lbl_quantidade.Name = "lbl_quantidade";
-            this.lbl_quantidade.Size = new System.Drawing.Size(100, 21);
-            this.lbl_quantidade.TabIndex = 5;
+            this.lbl_totalHoras.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_totalHoras.Location = new System.Drawing.Point(146, 105);
+            this.lbl_totalHoras.Name = "lbl_totalHoras";
+            this.lbl_totalHoras.Size = new System.Drawing.Size(63, 21);
+            this.lbl_totalHoras.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -114,71 +93,65 @@ namespace ControleTickets
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_inserir
+            // label1
             // 
-            this.btn_inserir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_inserir.FlatAppearance.BorderSize = 0;
-            this.btn_inserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inserir.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_inserir.ForeColor = System.Drawing.Color.White;
-            this.btn_inserir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inserir.Location = new System.Drawing.Point(666, 8);
-            this.btn_inserir.Name = "btn_inserir";
-            this.btn_inserir.Size = new System.Drawing.Size(84, 30);
-            this.btn_inserir.TabIndex = 7;
-            this.btn_inserir.Text = "Inserir";
-            this.btn_inserir.UseVisualStyleBackColor = false;
-            this.btn_inserir.Click += new System.EventHandler(this.btn_inserir_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(283, 38);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Controle de Tarefas";
             // 
-            // btn_consultar
+            // lbl_qtd
             // 
-            this.btn_consultar.FlatAppearance.BorderSize = 0;
-            this.btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_consultar.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_consultar.ForeColor = System.Drawing.Color.White;
-            this.btn_consultar.Location = new System.Drawing.Point(763, 8);
-            this.btn_consultar.Name = "btn_consultar";
-            this.btn_consultar.Size = new System.Drawing.Size(76, 30);
-            this.btn_consultar.TabIndex = 8;
-            this.btn_consultar.Text = "Consultar";
-            this.btn_consultar.UseVisualStyleBackColor = true;
-            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
+            this.lbl_qtd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_qtd.Location = new System.Drawing.Point(215, 145);
+            this.lbl_qtd.Name = "lbl_qtd";
+            this.lbl_qtd.Size = new System.Drawing.Size(63, 21);
+            this.lbl_qtd.TabIndex = 9;
             // 
-            // menu_panel
+            // menuStrip1
             // 
-            this.menu_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menu_panel.Controls.Add(this.logo);
-            this.menu_panel.Controls.Add(this.btn_voltar);
-            this.menu_panel.Controls.Add(this.lbl_Descricao);
-            this.menu_panel.Controls.Add(this.btn_consultar);
-            this.menu_panel.Controls.Add(this.btn_inserir);
-            this.menu_panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.menu_panel.Location = new System.Drawing.Point(0, 0);
-            this.menu_panel.Name = "menu_panel";
-            this.menu_panel.Size = new System.Drawing.Size(884, 44);
-            this.menu_panel.TabIndex = 9;
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 34);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // logo
+            // inserirToolStripMenuItem
             // 
-            this.logo.Image = global::ControleTickets.Properties.Resources.ticket_icon_icons_com_52351;
-            this.logo.Location = new System.Drawing.Point(229, 3);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(54, 44);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.logo.TabIndex = 14;
-            this.logo.TabStop = false;
+            this.inserirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.inserirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserirToolStripMenuItem1,
+            this.consultarToolStripMenuItem});
+            this.inserirToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.inserirToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(70, 30);
+            this.inserirToolStripMenuItem.Text = "Tarefas";
             // 
-            // btn_voltar
+            // inserirToolStripMenuItem1
             // 
-            this.btn_voltar.FlatAppearance.BorderSize = 0;
-            this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_voltar.Image = global::ControleTickets.Properties.Resources.exit_free_icon_font1;
-            this.btn_voltar.Location = new System.Drawing.Point(852, 4);
-            this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(32, 40);
-            this.btn_voltar.TabIndex = 14;
-            this.btn_voltar.UseVisualStyleBackColor = true;
-            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            this.inserirToolStripMenuItem1.Image = global::ControleTickets.Properties.Resources.task_list_square_add_regular_icon_203206;
+            this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
+            this.inserirToolStripMenuItem1.Text = "Inserir";
+            this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.inserirToolStripMenuItem1_Click);
+            // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Image = global::ControleTickets.Properties.Resources.search_interface_symbol;
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
             // 
             // TicketForm
             // 
@@ -187,9 +160,11 @@ namespace ControleTickets
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.menu_panel);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lbl_qtd);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lbl_quantidade);
+            this.Controls.Add(this.lbl_totalHoras);
             this.Controls.Add(this.lbl_qtdTickets);
             this.Controls.Add(this.lbl_valor_total_horas);
             this.Controls.Add(this.lbl_total_horas);
@@ -200,25 +175,24 @@ namespace ControleTickets
             this.Text = "Home";
             this.Load += new System.EventHandler(this.TicketForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menu_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lbl_Descricao;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private System.Windows.Forms.Label lbl_total_horas;
         private System.Windows.Forms.Label lbl_valor_total_horas;
         private System.Windows.Forms.Label lbl_qtdTickets;
-        private System.Windows.Forms.Label lbl_quantidade;
+        private System.Windows.Forms.Label lbl_totalHoras;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_inserir;
-        private System.Windows.Forms.Button btn_consultar;
-        private System.Windows.Forms.Panel menu_panel;
-        private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_qtd;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
     }
 }
